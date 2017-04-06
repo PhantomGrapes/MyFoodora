@@ -47,8 +47,8 @@ public class Customer extends User{
 		
 		public void finishOrder(){
 			currentOrder.setFinalPrice(fidelityPlan.calculateFinalPrice());
-			// find a deliver courier
-			// pay of it
+			// tell myFoodora to find a deliver courier
+			// pay for it
 			historyOrders.add(currentOrder);
 		}
 		
@@ -58,7 +58,7 @@ public class Customer extends User{
 				System.out.println("There is no history order.\n");
 			}else{
 				for(Order order: historyOrders){
-					// 还没有写完的部分
+					// Not finished
 					System.out.println("");
 				}
 			}
