@@ -20,7 +20,26 @@ public class Courier extends User{
 
 // new Address
 	public void setAddress(Coordinate newAddress){
+		address = newAddress;
+	}
+
+// On or off duty
+	public void setOnOrOffDuty(boolean isOnDuty){
+		onDuty = isOnDuty;
+	}
+
+// accepter or refuse an order
+	public void acceptTheOrder(Order order){
+		order.setCourier(this);
+		deliveredOrders.add(order);
+	}
+	
+	public void refuseTheOrder(Order order){
 		
 	}
 
+// counter of orders
+	public int counterOfDeliveredOrder(){
+		return deliveredOrders.size();
+	}
 }
