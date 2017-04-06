@@ -13,5 +13,14 @@ public class Courier extends User{
 	
 	private ArrayList<Order> deliveredOrders = new ArrayList<Order>();
 	
-	
+// Constructor of Courier
+	public Courier(){
+		super();
+	}
+
+// new Address
+	public void setAddress(Coordinate newAddress){
+		
+	}
+
 }

@@ -224,6 +224,11 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y5ArYBrNEeeAY_0S9eF64w" name="restaurant" type="_kpcbUBoDEeexs5CmLH5EkA"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_cSvnUBrNEeeAY_0S9eF64w" name="finishOrder"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_8oL4QBsHEeeSC7Ci7lGO4w" name="setBeNotifiedByEmail">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_CYj7cBsIEeeSC7Ci7lGO4w" name="byEmail">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_281TIBoDEeexs5CmLH5EkA" name="User" isAbstract="true">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_U_m1EBrGEeeAY_0S9eF64w" name="name" visibility="private">

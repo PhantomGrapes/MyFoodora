@@ -19,5 +19,58 @@ public class Customer extends User{
 	private ArrayList<Order> historyOrders = new ArrayList<Order>();
 	
 	
-	
+	// Create an order, Pick items, Finish an order
+		public void creatOrder(Restaurant restaurant){
+			
+		}
+		
+		public void addToOrder(Item item){
+			
+		}
+		
+		public void addToOrder(Meal meal){
+			
+		}
+		
+		public void removeFromOrder(Item item){
+			
+		}
+		
+		public void removeFromOrder(Meal meal){
+			
+		}
+		
+		public void finishOrder(){
+			
+		}
+		
+	// History orders, print all orders made by this customer
+		public void getHistoryOrder(){
+			if(historyOrders.size() == 0){
+				System.out.println("There is no history order.\n");
+			}else{
+				for(Order order: historyOrders){
+					// 还没有写完的部分
+					System.out.println("");
+				}
+			}
+		}
+
+	// Can be Notified or not, by what method?
+		public void setCanBeNotified(boolean canBe){
+			
+		}
+		
+		public void setBeNotifiedByEmail(boolean byEmail){
+			
+		}
+		
+	// Change Fidelity Plan
+		public void registerFidelityPlan(FidelityPlan fidelityPlan){
+			
+		}
+		
+		public void unregisterFidelityPlan(){
+			
+		}
 }
