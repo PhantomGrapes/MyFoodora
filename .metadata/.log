@@ -1,0 +1,32 @@
+!SESSION 2017-04-06 23:50:24.191 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data U:\github\Group22_Project_IS1220_ZHANG_DING\MyFoodora
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-04-06 23:50:57.906
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Dingo'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2017-04-06 23:54:58.398 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data U:\github\Group22_Project_IS1220_ZHANG_DING\MyFoodora
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-04-06 23:55:10.481
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Dingo'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.papyrus.infra.types.core 1 0 2017-04-06 23:58:39.220
+!MESSAGE org.eclipse.papyrus.gmfdiag.common.Diagram is already registred elementtype but it is not binded yet. It has been binded to Papyrus context. 
+
+!ENTRY org.eclipse.papyrus.infra.types.core 1 0 2017-04-06 23:58:39.356
+!MESSAGE org.eclipse.gmf.runtime.emf.type.core.default is already registred elementtype but it is not binded yet. It has been binded to Papyrus context. 
