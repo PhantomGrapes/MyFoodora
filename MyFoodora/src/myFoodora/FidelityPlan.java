@@ -2,7 +2,7 @@ package myFoodora;
 
 public interface FidelityPlan {
 
-	public double calculateFinalPrice();
+	public double calculateFinalPrice(Order order);
 	
 	public double visit(Item item);
 	

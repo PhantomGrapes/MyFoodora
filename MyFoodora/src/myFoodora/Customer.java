@@ -46,7 +46,7 @@ public class Customer extends User{
 		}
 		
 		public void finishOrder(){
-			currentOrder.setFinalPrice(fidelityPlan.calculateFinalPrice());
+			currentOrder.setFinalPrice(fidelityPlan.calculateFinalPrice(currentOrder));
 			// tell myFoodora to find a deliver courier
 			// pay for it
 			historyOrders.add(currentOrder);

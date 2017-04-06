@@ -14,4 +14,20 @@ public class Restaurant extends User{
 	private double specialDiscountFactor;
 	
 	private ArrayList<Order> orders = new ArrayList<Order>();
+
+	public double getGeneiclDiscountFactor() {
+		return geneiclDiscountFactor;
+	}
+
+	public void setGeneiclDiscountFactor(double geneiclDiscountFactor) {
+		this.geneiclDiscountFactor = geneiclDiscountFactor;
+	}
+
+	public double getSpecialDiscountFactor() {
+		return specialDiscountFactor;
+	}
+
+	public void setSpecialDiscountFactor(double specialDiscountFactor) {
+		this.specialDiscountFactor = specialDiscountFactor;
+	}
 }
