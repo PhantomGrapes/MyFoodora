@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MyFoodora/Part1&apos; to &apos;UML&apos;" description="Rename resource &apos;Part1&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Part1" name="UML" stamp="1491495837099" updateReferences="true"/>
+</session>
