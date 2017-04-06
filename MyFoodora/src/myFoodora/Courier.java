@@ -12,4 +12,6 @@ public class Courier extends User{
 	private boolean onDuty;
 	
 	private ArrayList<Order> deliveredOrders = new ArrayList<Order>();
+	
+	
 }
