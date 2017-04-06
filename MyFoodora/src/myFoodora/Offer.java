@@ -2,6 +2,6 @@ package myFoodora;
 
 public interface Offer {
 
-	public double accept(FidelityPlan fp);
+	public double accept(FidelityPlan fidelityPlan);
 	
 }

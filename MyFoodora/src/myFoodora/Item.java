@@ -8,7 +8,7 @@ public class Item implements Offer{
 	
 	private double price;
 	
-	public double accept(FidelityPlan fp){
+	public double accept(FidelityPlan fidelityPlan){
 		return 0;
 	}
 }

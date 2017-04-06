@@ -12,7 +12,7 @@ public class Meal implements Offer {
 	
 	private ArrayList<Item> mealComposer = new ArrayList<Item>();
 	
-	public double accept(FidelityPlan fp){
+	public double accept(FidelityPlan fidelityPlan){
 		return 0;
 	}
 }
