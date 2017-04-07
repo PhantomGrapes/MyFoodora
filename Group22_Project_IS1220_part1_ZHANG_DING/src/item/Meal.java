@@ -15,6 +15,8 @@ public class Meal implements Offer {
 	// new add
 	int soldNumber;
 	
+	private double price;
+	
 	private boolean isSpecialOffer;
 	
 	private ArrayList<Item> mealComposer = new ArrayList<Item>();
@@ -37,6 +39,14 @@ public class Meal implements Offer {
 		soldNumber = n;
 	}
 	
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
 	public String getType() {
 		return type;
 	}

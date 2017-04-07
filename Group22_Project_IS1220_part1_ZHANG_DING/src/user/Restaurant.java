@@ -55,7 +55,14 @@ public class Restaurant extends User{
 		this.specialDiscountFactor = specialDiscountFactor;
 	}
 	
-	
+	public Menu getMenu() {
+		return menu;
+	}
+
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}
+
 	public ArrayList<Order> getOrders() {
 		return orders;
 	}

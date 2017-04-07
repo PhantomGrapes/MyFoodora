@@ -130,20 +130,30 @@ public class Customer extends User{
 	}
 
 	
-	public void addToOrder(Item item){
-		currentOrder.addToItemList(item);
+	public void addToOrder(Item item, int quantity){
+		for(int i=0; i<quantity; i++){
+			currentOrder.addToItemList(item);
+		}
 	}
 	
-	public void addToOrder(Meal meal){
-		currentOrder.addToMealList(meal);
+	public void addToOrder(Meal meal, int quantity){
+		for (int i=0; i<quantity; i++){
+			currentOrder.addToMealList(meal);
+		}
 	}
 	
 	public void removeFromOrder(Item item){
-		currentOrder.removeFromItemList(item);
+		if(currentOrder.getItemList().contains(item))
+			currentOrder.removeFromItemList(item);
+		else
+			System.out.println("There is not this dish in your order");
 	}
 	
 	public void removeFromOrder(Meal meal){
-		currentOrder.removeFromMealList(meal);
+		if(currentOrder.getMealList().contains(meal))
+			currentOrder.removeFromMealList(meal);
+		else
+			System.out.println("There is not this meal in your order");
 	}
 	
 	public void finishOrder(){
