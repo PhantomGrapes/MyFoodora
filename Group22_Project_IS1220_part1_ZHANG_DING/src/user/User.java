@@ -1,6 +1,12 @@
 package user;
 
 import myFoodora.MyFoodora;
+import utilites.UniqueIDNumberGenerator;
+
+/**
+ * @author Shoulong
+ * Top class of manager, customer, restaurant and courier.. 
+ */
 
 public class User {
 	// change private to protected, so that children can inherit these attribute
@@ -14,9 +20,14 @@ public class User {
 
 	MyFoodora myFoodora;
 
-// Constructors of User
-	public User(){
+//new add Constructors of User
+	public User(String _name, String _username, String _password){
+		name = _name;
+		username = _username;
+		password = _password;
 		
+		UniqueIDNumberGenerator generator = UniqueIDNumberGenerator.getInstance();
+		ID = generator.getNextIDNumber();
 	}
 	
 // Register/Unregister to system

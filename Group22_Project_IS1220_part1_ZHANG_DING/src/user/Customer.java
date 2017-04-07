@@ -10,6 +10,11 @@ import item.Order;
 import item.PointPlan;
 import utilites.Coordinate;
 
+/**
+ * @author Shoulong
+ * Customer of MyFoodora to make an order.
+ */
+
 public class Customer extends User{
 	
 	private String surname;
@@ -28,6 +33,21 @@ public class Customer extends User{
 	
 	private int fidelityPoint;
 	
+	
+	public Customer(String _name, String surname, String _username, Coordinate address, String _password) {
+		super(_name, _username, _password);
+		this.surname = surname;
+		this.address = address;
+		this.email = "";
+		this.phoneNumber = "";
+		this.canBeNotified = true;
+		this.isNotifiedByEmail = true;
+		this.fidelityPlan = new BasicPlan();
+		this.currentOrder = null;
+		this.historyOrders = new ArrayList<Order>();
+		this.fidelityPoint = 0;
+	}
+
 // getters and setters
 	public String getSurname() {
 		return surname;

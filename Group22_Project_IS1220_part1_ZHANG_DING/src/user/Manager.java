@@ -7,9 +7,20 @@ import java.util.Comparator;
 
 import item.Order;
 
+/**
+ * @author Shoulong
+ * Managers of MyFoodora.
+ */
+
 public class Manager extends User{
 
 	private String surname;
+	
+// new add Constructor of manager
+	public Manager(String _name, String surname, String _username, String _password) {
+		super(_name, _username, _password);
+		this.surname = surname;
+	}
 	
 	public double getTotalIncome(Date startDate, Date endDate){
 		double totalIncome, markup, serviceFee, deliveryCost;
@@ -24,7 +35,7 @@ public class Manager extends User{
 		}
 		return totalIncome;
 	}
-	
+
 	public double getAverageIncome(Date startDate, Date endDate){
 		double totalIncome, markup, serviceFee, deliveryCost;
 		int num;

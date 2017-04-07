@@ -4,8 +4,14 @@ import java.util.ArrayList;
 
 import item.Menu;
 import item.Order;
+import policy.SortHalfMeal;
 import policy.SortPolicy;
 import utilites.Coordinate;
+
+/**
+ * @author Shoulong
+ * Restaurant of MyFoodora.
+ */
 
 public class Restaurant extends User{
 
@@ -15,17 +21,28 @@ public class Restaurant extends User{
 	
 	private Menu menu;
 	
-	private double geneiclDiscountFactor;
+	private double genericDiscountFactor;
 	private double specialDiscountFactor;
 	
 	private ArrayList<Order> orders = new ArrayList<Order>();
 
+	
+	public Restaurant(String _name, Coordinate _address, String _username, String _password) {
+		super(_name, _username, _password);
+		this.address = _address;
+		this.sortPolicy = new SortHalfMeal();
+		this.menu = new Menu();
+		this.genericDiscountFactor = 0.05;
+		this.specialDiscountFactor = 0.1;
+	}
+
+// getter and setter
 	public double getGeneiclDiscountFactor() {
-		return geneiclDiscountFactor;
+		return genericDiscountFactor;
 	}
 
 	public void setGeneiclDiscountFactor(double geneiclDiscountFactor) {
-		this.geneiclDiscountFactor = geneiclDiscountFactor;
+		this.genericDiscountFactor = geneiclDiscountFactor;
 	}
 
 	public double getSpecialDiscountFactor() {

@@ -1,5 +1,10 @@
 package utilites;
 
+/**
+ * @author Shoulong
+ * Address type data class.
+ */
+
 public class Coordinate {
 	 
 	private int x;

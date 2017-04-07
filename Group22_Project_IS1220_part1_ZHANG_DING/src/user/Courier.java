@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import item.Order;
 import utilites.Coordinate;
 
+/**
+ * @author Shoulong
+ * Courier to delivering orders.
+ */
+
 public class Courier extends User{
 
 	private String surname;
@@ -17,14 +22,20 @@ public class Courier extends User{
 	private ArrayList<Order> deliveredOrders = new ArrayList<Order>();
 	
 // Constructor of Courier
-	public Courier(){
-		super();
+	public Courier(String _name, String surname, String _username, Coordinate address, String _password) {
+		super(_name, _username, _password);
+		this.surname = surname;
+		this.address = address;
+		this.phoneNumber = "";
+		this.onDuty = false;
+		this.deliveredOrders = new ArrayList<Order>();
 	}
 
 // new Address
 	public void setAddress(Coordinate newAddress){
 		address = newAddress;
 	}
+
 // new add	
 	public Coordinate getAddress(){
 		return address;

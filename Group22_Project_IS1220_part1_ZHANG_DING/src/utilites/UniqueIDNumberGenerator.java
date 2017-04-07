@@ -1,5 +1,10 @@
 package utilites;
 
+/**
+ * @author Shoulong
+ * To generate unique ID number for users by using a singleton pattern.  
+ */
+
 public class UniqueIDNumberGenerator {
 	
 	private static UniqueIDNumberGenerator instance = null;
