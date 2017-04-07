@@ -343,7 +343,6 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_kZW5oBo_EeeazM3J-WPctQ" name="FidelityPlan">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_lGQpohpEEeemDZzDytBNzQ" name="customer" type="_neDQ8BoDEeexs5CmLH5EkA" association="_lGQCkBpEEeemDZzDytBNzQ"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_ZUiE0BpAEeeazM3J-WPctQ" name="calculateFinalPrice"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_3bSLEBpCEeeazM3J-WPctQ" name="visit">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_5b0fcBpCEeeazM3J-WPctQ" name="item" type="_MrbEsBo_EeeazM3J-WPctQ"/>
     </ownedOperation>
@@ -357,7 +356,6 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_0fGGwBpCEeeazM3J-WPctQ" name="BasicPlan">
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_RRhJQBpDEeeazM3J-WPctQ" client="_0fGGwBpCEeeazM3J-WPctQ" supplier="_kZW5oBo_EeeazM3J-WPctQ" contract="_kZW5oBo_EeeazM3J-WPctQ"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_--2qMBpCEeeazM3J-WPctQ" name="calculateFinalPrice"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_ArWBMBpDEeeazM3J-WPctQ" name="visit">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_CI2hABpDEeeazM3J-WPctQ" name="item" type="_MrbEsBo_EeeazM3J-WPctQ"/>
     </ownedOperation>
@@ -371,7 +369,6 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
     </ownedAttribute>
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_CCFVMBpEEeemDZzDytBNzQ" client="_wKTbUBpDEeemDZzDytBNzQ" supplier="_kZW5oBo_EeeazM3J-WPctQ" contract="_kZW5oBo_EeeazM3J-WPctQ"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_xzNS0BpDEeemDZzDytBNzQ" name="calculateFinalPrice"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_zOryUBpDEeemDZzDytBNzQ" name="visit">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_3Jy9ABpDEeemDZzDytBNzQ" name="item" type="_MrbEsBo_EeeazM3J-WPctQ"/>
     </ownedOperation>
@@ -386,7 +383,6 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AmVVMBrOEeeAY_0S9eF64w" value="1"/>
     </ownedAttribute>
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_CVh1oBpEEeemDZzDytBNzQ" client="_3tXkIBpDEeemDZzDytBNzQ" supplier="_kZW5oBo_EeeazM3J-WPctQ" contract="_kZW5oBo_EeeazM3J-WPctQ"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_8X9rABpDEeemDZzDytBNzQ" name="calculateFinalPrice"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_9hoo0BpDEeemDZzDytBNzQ" name="visit">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_BCdrQBpEEeemDZzDytBNzQ" name="item" type="_MrbEsBo_EeeazM3J-WPctQ"/>
     </ownedOperation>
