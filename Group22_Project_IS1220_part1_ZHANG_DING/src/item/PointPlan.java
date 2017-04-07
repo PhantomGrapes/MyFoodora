@@ -2,8 +2,6 @@ package item;
 
 public class PointPlan implements FidelityPlan{
 	
-	private int points;
-	
 	@Override
 	public double visit(Item item){
 		return item.getPrice();
@@ -39,8 +37,8 @@ public class PointPlan implements FidelityPlan{
 		
 		if(order.getCustomer().getFidelityPoint() >= 100){
 			priceOfOrder = priceOfOrder * 0.9;
+			order.getCustomer().setFidelityPoint(order.getCustomer().getFidelityPoint() - 100); 
 		}
-		
 		return priceOfOrder;
 	}
 }

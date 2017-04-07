@@ -48,6 +48,7 @@ public class Item implements Offer{
 	public void setSoldNumber(int n){
 		soldNumber = n;
 	}
+	
 	public double getPrice() {
 		return price;
 	}

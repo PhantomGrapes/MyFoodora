@@ -1,6 +1,5 @@
 package user;
 
-import java.sql.Date;
 import java.util.ArrayList;
 
 import item.BasicPlan;
@@ -8,6 +7,7 @@ import item.FidelityPlan;
 import item.Item;
 import item.Meal;
 import item.Order;
+import item.PointPlan;
 import utilites.Coordinate;
 
 public class Customer extends User{
@@ -131,6 +131,10 @@ public class Customer extends User{
 				meal.setSoldNumber(meal.getSoldNumber()+1);
 			}
 		}
+		
+		if(fidelityPlan instanceof PointPlan){
+			fidelityPoint = fidelityPoint + (int)((int)currentOrder.getFinalPrice()/10);
+		}
 	}
 	
 // History orders, print all orders made by this customer
@@ -140,7 +144,7 @@ public class Customer extends User{
 		}else{
 			for(Order order: historyOrders){
 				// Not finished
-				System.out.println("");
+				System.out.println(order.getDate());
 			}
 		}
 	}

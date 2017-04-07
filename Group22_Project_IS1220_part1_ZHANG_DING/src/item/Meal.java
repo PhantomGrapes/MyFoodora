@@ -31,6 +31,7 @@ public class Meal implements Offer {
 	public void setSoldNumber(int n){
 		soldNumber = n;
 	}
+	
 	public String getType() {
 		return type;
 	}
