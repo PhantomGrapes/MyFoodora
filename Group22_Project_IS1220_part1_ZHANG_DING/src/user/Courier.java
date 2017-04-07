@@ -34,6 +34,10 @@ public class Courier extends User{
 	public void setOnOrOffDuty(boolean isOnDuty){
 		onDuty = isOnDuty;
 	}
+	
+	public boolean isOnDuty(){
+		return onDuty;
+	}
 
 // accepter or refuse an order
 	public void acceptTheOrder(Order order){

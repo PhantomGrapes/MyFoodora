@@ -36,8 +36,19 @@ public class Restaurant extends User{
 		this.specialDiscountFactor = specialDiscountFactor;
 	}
 	
+	
+	public ArrayList<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(ArrayList<Order> orders) {
+		this.orders = orders;
+	}
+
 	// new add
 	public void addOrder(Order order){
 		orders.add(order);
 	}
+	
+	
 }
