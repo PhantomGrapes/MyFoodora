@@ -2,6 +2,11 @@ package item;
 
 import java.util.ArrayList;
 
+/**
+ * @author Shoulong
+ * Meal item of a menu of restaurant.
+ */
+
 public class Meal implements Offer {
 
 	private String name;

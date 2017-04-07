@@ -7,6 +7,11 @@ import user.Courier;
 import user.Customer;
 import user.Restaurant;
 
+/**
+ * @author Shoulong
+ * An order composed by item and meal. 
+ */
+
 public class Order {
 	
 	private Customer customer;

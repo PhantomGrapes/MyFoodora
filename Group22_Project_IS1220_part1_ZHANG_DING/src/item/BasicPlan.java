@@ -1,5 +1,10 @@
 package item;
 
+/**
+ * @author Shoulong
+ * Basic plan of fidelity plan, calculate special meal in a way of special discount factor. 
+ */
+
 public class BasicPlan implements FidelityPlan{
 	
 	

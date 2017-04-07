@@ -1,5 +1,10 @@
 package item;
 
+/**
+ * @author Shoulong
+ * Point plan of fidelity plan to gain point every each 10 euros.
+ */
+
 public class PointPlan implements FidelityPlan{
 	
 	@Override

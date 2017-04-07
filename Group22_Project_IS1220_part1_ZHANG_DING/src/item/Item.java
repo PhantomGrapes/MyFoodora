@@ -1,5 +1,10 @@
 package item;
 
+/**
+ * @author Shoulong
+ * Single dishes of a menu of restaurant. 
+ */
+
 public class Item implements Offer{
 	
 	private String name;

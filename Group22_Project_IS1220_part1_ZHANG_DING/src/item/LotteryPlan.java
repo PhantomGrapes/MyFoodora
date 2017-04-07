@@ -1,5 +1,10 @@
 package item;
 
+/**
+ * @author Shoulong
+ * Lottery plan of fidelity plan, there is a chance to have a free meal each day.
+ */
+
 public class LotteryPlan implements FidelityPlan{
 	
 	private double probability;

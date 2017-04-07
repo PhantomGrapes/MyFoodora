@@ -10,6 +10,10 @@ import user.Customer;
 import user.Restaurant;
 import user.User;
 
+/**
+ * @author Shoulong
+ * Store all data of MyFoodora system, implement functions of top class. 
+ */
 
 public class MyFoodora {
 	
