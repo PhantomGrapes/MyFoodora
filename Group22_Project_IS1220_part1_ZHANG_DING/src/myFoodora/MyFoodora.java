@@ -10,9 +10,9 @@ import user.Customer;
 import user.Restaurant;
 import user.User;
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	// Mark: need an initialize a probability of lottery fidelity plan
-=======
+//=======
 public class MyFoodora {
 	ArrayList<User> users;
 	ArrayList<Restaurant> restaurants;
@@ -141,5 +141,5 @@ public class MyFoodora {
 	public static void main(String[] args){
 		
 	}
->>>>>>> 4bf286938d08df5715d1d22927e18fa98fa25861
+//>>>>>>> 4bf286938d08df5715d1d22927e18fa98fa25861
 }
