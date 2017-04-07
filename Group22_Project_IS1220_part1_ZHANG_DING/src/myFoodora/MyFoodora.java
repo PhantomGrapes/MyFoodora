@@ -10,10 +10,9 @@ import user.Customer;
 import user.Restaurant;
 import user.User;
 
-//<<<<<<< HEAD
-	// Mark: need an initialize a probability of lottery fidelity plan
-//=======
+
 public class MyFoodora {
+	
 	ArrayList<User> users;
 	ArrayList<Restaurant> restaurants;
 	ArrayList<Customer> customers;
@@ -24,6 +23,7 @@ public class MyFoodora {
 	double markup;
 	double deliveryCost;
 	ArrayList<Order> orders;
+	
 	public double getServiceFee() {
 		return serviceFee;
 	}
@@ -43,7 +43,6 @@ public class MyFoodora {
 		this.deliveryCost = deliveryCost;
 	}
 	
-	
 	public ArrayList<Order> getOrders() {
 		return orders;
 	}
@@ -56,7 +55,6 @@ public class MyFoodora {
 	public void setTargetProfitPolicy(TargetProfitPolicy targetProfitPolicy) {
 		this.targetProfitPolicy = targetProfitPolicy;
 	}
-	
 	
 	public ArrayList<Restaurant> getRestaurants() {
 		return restaurants;
@@ -138,8 +136,8 @@ public class MyFoodora {
 		cs.get(0).acceptTheOrder(order);
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		
 	}
-//>>>>>>> 4bf286938d08df5715d1d22927e18fa98fa25861
+
 }
