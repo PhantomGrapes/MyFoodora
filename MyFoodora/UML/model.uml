@@ -224,6 +224,11 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y5ArYBrNEeeAY_0S9eF64w" name="restaurant" type="_kpcbUBoDEeexs5CmLH5EkA"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_cSvnUBrNEeeAY_0S9eF64w" name="finishOrder"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_8oL4QBsHEeeSC7Ci7lGO4w" name="setBeNotifiedByEmail">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_CYj7cBsIEeeSC7Ci7lGO4w" name="byEmail">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_281TIBoDEeexs5CmLH5EkA" name="User" isAbstract="true">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_U_m1EBrGEeeAY_0S9eF64w" name="name" visibility="private">
@@ -586,6 +591,14 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Realization" xmi:id="_jkJlIBrdEeeWsPyq_BIxYg" client="_N-4F0BrdEeeWsPyq_BIxYg" supplier="_12eDwBrOEeeAY_0S9eF64w"/>
   <packagedElement xmi:type="uml:Realization" xmi:id="_kYfzMBrdEeeWsPyq_BIxYg" client="_OWIIMBrdEeeWsPyq_BIxYg" supplier="_12eDwBrOEeeAY_0S9eF64w"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_WVQQMBsEEeeSC7Ci7lGO4w" name="UniqueIDGenerator">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_YwJlUBsEEeeSC7Ci7lGO4w" name="instance" visibility="private" type="_WVQQMBsEEeeSC7Ci7lGO4w"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_opzloBsEEeeSC7Ci7lGO4w" name="number" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_5FAz0BsEEeeSC7Ci7lGO4w" name="getInstance"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_6sBN4BsEEeeSC7Ci7lGO4w" name="getNextIDNumber"/>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_WSI0ABoCEeexs5CmLH5EkA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WSKpMBoCEeexs5CmLH5EkA" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.129+U:\github\Group22_Project_IS1220_ZHANG_DING\MyFoodora\.metadata\.plugins\org.eclipse.jdt.core
 2974758093.index
 393034830.index
@@ -18,3 +19,6 @@ INDEX VERSION 1.129+U:\github\Group22_Project_IS1220_ZHANG_DING\MyFoodora\.metad
 3214124137.index
 555987815.index
 163337748.index
+=======
+INDEX VERSION 1.129+C:\Users\Gregory ZHANG\Documents\GitHub\MyFoodora\.metadata\.plugins\org.eclipse.jdt.core
+>>>>>>> 7485344a57ca960856f5cf31bda5fc2a0ac79199
