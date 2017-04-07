@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="RefactoringWizard.preview">
-		<item value="600" key="width"/>
-		<item value="400" key="height"/>
+	<section name="GenerateConstructorUsingFieldsSelectionDialog">
+		<item value="false" key="OmitCallToSuper"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="2" key="layout"/>
@@ -11,6 +10,13 @@
 		<item value="1" key="rootMode"/>
 		<item value="false" key="linkWithEditor"/>
 	</section>
+	<section name="DialogBounds_GenerateConstructorUsingFieldsSelectionDialog">
+		<item value="574" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="728" key="DIALOG_HEIGHT"/>
+		<item value="404" key="DIALOG_X_ORIGIN"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>
 		<item value="true" key="create_unimplemented"/>
@@ -18,10 +24,54 @@
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
 	</section>
+	<section name="SourceActionDialog.constructors">
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
+		<item value="false" key="FinalModifier"/>
+	</section>
+	<section name="RefactoringWizard.preview">
+		<item value="600" key="width"/>
+		<item value="400" key="height"/>
+	</section>
+	<section name="javadoc">
+		<item value="private" key="access"/>
+		<item value="false" key="noindex"/>
+		<item value="U:\github\Group22_Project_IS1220_ZHANG_DING\MyFoodora\MyFoodora\javadoc.xml" key="antpath"/>
+		<item value="false" key="nodeprecatedlist"/>
+		<item value="true" key="use"/>
+		<item value="true" key="author"/>
+		<item value="false" key="nodeprecated"/>
+		<item value="false" key="nonavbar"/>
+		<item value="" key="docletpath"/>
+		<item value="E:\JavaSE\bin\javadoc.exe" key="javadoc_command_history"/>
+		<item value="1.8" key="source"/>
+		<item value="true" key="version"/>
+		<item value="" key="docletname"/>
+		<item value="true" key="splitindex"/>
+		<item value="true" key="fromStandard"/>
+		<item value="false" key="notree"/>
+		<item value="U:\github\Group22_Project_IS1220_ZHANG_DING\MyFoodora\MyFoodora\doc" key="destdir"/>
+		<item value="false" key="openinbrowser"/>
+		<section name="projects">
+			<section name="MyFoodora">
+				<item value="U:\github\Group22_Project_IS1220_ZHANG_DING\MyFoodora\MyFoodora\javadoc.xml" key="antpath"/>
+				<item value="U:\github\Group22_Project_IS1220_ZHANG_DING\MyFoodora\MyFoodora\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+		</section>
+	</section>
 	<section name="NewPackageWizardPage">
 		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="JavadocWizardDialog">
+		<item value="616" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="609" key="DIALOG_HEIGHT"/>
+		<item value="383" key="DIALOG_X_ORIGIN"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>

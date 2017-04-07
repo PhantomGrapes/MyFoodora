@@ -1,0 +1,15 @@
+package policy;
+
+import java.util.ArrayList;
+
+import item.Meal;
+import item.Menu;
+import item.Order;
+
+/**
+ * @author Dingo
+ * Policy used to 
+ */
+public interface SortPolicy {
+	public ArrayList<Meal> shippedOrderSort(Order order);
+}

@@ -1,0 +1,46 @@
+package policy;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+import item.Meal;
+import item.Order;
+import user.Courier;
+
+
+/**
+ * @author Dingo
+ * Sort half meals in orders
+ */
+public class SortHalfMeal implements SortPolicy{
+
+	@Override
+	public ArrayList<Meal> shippedOrderSort(ArrayList<Order> orders) {
+		ArrayList<Meal> halfMeals = new ArrayList<Meal>();
+		ArrayList<Meal> meals;
+		
+		// find all half meals
+		for (Order o : orders) {
+			meals = o.getMealList();
+			if(meals != null && meals.size()>0){
+				for (Meal meal : meals) {
+					if(meal.getType() == "halfMeal" && !halfMeals.contains(meal))
+						halfMeals.add(meal);
+				}
+			}
+		}
+		
+		// sort half meals
+		Collections.sort(halfMeals, new Comparator<Meal>() {
+			@Override
+			public int compare(Meal m1, Meal m2){
+				return m2.getSoldNumber() - m1.getSoldNumber();
+			}
+		});
+		return halfMeals;
+	}
+
+	
+
+}
