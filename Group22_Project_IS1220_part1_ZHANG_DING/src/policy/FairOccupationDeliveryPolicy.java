@@ -11,12 +11,17 @@ import utilites.Coordinate;
 
 /**
  * @author Dingo
- * Sort the courier list according to their number of delivered order
+ * Sort the courier list according to their number of delivered order without offduty couriers
  */
 public class FairOccupationDeliveryPolicy implements DeliveryPolicy{
 
 	@Override
-	public ArrayList<Courier> sort(ArrayList<Courier> couriers, Customer customer) {
+	public ArrayList<Courier> sort(ArrayList<Courier> PrimitiveCouriers, Customer customer) {
+		ArrayList<Courier> couriers = new ArrayList<Courier>();
+		for (Courier courier : PrimitiveCouriers) {
+			if (courier.isOnDuty())
+				couriers.add(courier);
+		}
 		Collections.sort(couriers, new Comparator<Courier>() {
 			@Override
 			public int compare(Courier c1, Courier c2){

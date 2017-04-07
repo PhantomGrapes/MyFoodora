@@ -1,0 +1,24 @@
+package myFoodora;
+
+import java.util.ArrayList;
+
+import item.Order;
+import policy.DeliveryPolicy;
+import user.Courier;
+import user.Customer;
+import user.Restaurant;
+import user.User;
+
+public class MyFoodora {
+	ArrayList<User> users;
+	ArrayList<Restaurant> restaurants;
+	ArrayList<Customer> customers;
+	ArrayList<Courier> couriers;
+	DeliveryPolicy deliveryPolicy;
+	double serviceFee;
+	double markup;
+	double deliveryCost;
+	ArrayList<Order> orders;
+	
+	
+}

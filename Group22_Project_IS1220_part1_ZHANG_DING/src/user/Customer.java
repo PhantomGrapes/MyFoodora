@@ -73,9 +73,6 @@ public class Customer extends User{
 		return historyOrders;
 	}
 
-	public boolean isCanBeNotified() {
-		return canBeNotified;
-	}
 	
 	public Coordinate getAddress(){
 		return address;
@@ -99,8 +96,17 @@ public class Customer extends User{
 		currentOrder.setCustomer(this);
 		currentOrder.setRestaurant(restaurant);
 		//currentOrder.setDate(Date.);
-		
 	}
+
+
+	public void setNotifiedByEmail(boolean isNotifiedByEmail) {
+		this.isNotifiedByEmail = isNotifiedByEmail;
+	}
+
+	public boolean isCanBeNotified() {
+		return canBeNotified;
+	}
+
 	
 	public void addToOrder(Item item){
 		currentOrder.addToItemList(item);

@@ -18,7 +18,7 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dwzhwBrCEeeAY_0S9eF64w"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dw1W8BrCEeeAY_0S9eF64w" value="*"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_El-tgBrBEeeAY_0S9eF64w" name="deliveryPolicy" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_El-tgBrBEeeAY_0S9eF64w" name="deliveryPolicy" visibility="private" type="_12eDwBrOEeeAY_0S9eF64w"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_CUxDYBrCEeeAY_0S9eF64w" name="serviceFee" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EvJbIBrCEeeAY_0S9eF64w" value="1"/>
@@ -34,6 +34,7 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PAnjkBrFEeeAY_0S9eF64w"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PAp_0BrFEeeAY_0S9eF64w" value="*"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_zFo7oBtiEeeJqa9H5YKlEw" name="targetProfitPolicy" visibility="private" type="_mYc2kBrOEeeAY_0S9eF64w"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_nez4IBrCEeeAY_0S9eF64w" name="main" isStatic="true">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_0iTjoBrCEeeAY_0S9eF64w" name="args">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -231,20 +232,20 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_281TIBoDEeexs5CmLH5EkA" name="User" isAbstract="true">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_U_m1EBrGEeeAY_0S9eF64w" name="name" visibility="private">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_U_m1EBrGEeeAY_0S9eF64w" name="name" visibility="protected">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_bQbS4BrGEeeAY_0S9eF64w" name="id" visibility="private">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bQbS4BrGEeeAY_0S9eF64w" name="id" visibility="protected">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_hFJDgBrGEeeAY_0S9eF64w" name="username" visibility="private">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_hFJDgBrGEeeAY_0S9eF64w" name="username" visibility="protected">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_vtLq8BrGEeeAY_0S9eF64w" name="password" visibility="private">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_vtLq8BrGEeeAY_0S9eF64w" name="password" visibility="protected">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_F6aiIBrHEeeAY_0S9eF64w" name="myFoodora" visibility="private" type="_a9iWsBoDEeexs5CmLH5EkA"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_22dI0BrIEeeAY_0S9eF64w" name="isActive" visibility="private">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_F6aiIBrHEeeAY_0S9eF64w" name="myFoodora" visibility="protected" type="_a9iWsBoDEeexs5CmLH5EkA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_22dI0BrIEeeAY_0S9eF64w" name="isActive" visibility="protected">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
     </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_F0cOQBrNEeeAY_0S9eF64w" name="registerToSystem"/>

@@ -1,0 +1,81 @@
+package user;
+
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+import item.Order;
+
+public class Manager extends User{
+
+	private String surname;
+	
+	public double getTotalIncome(Date startDate, Date endDate){
+		double totalIncome, markup, serviceFee, deliveryCost;
+		totalIncome = 0;
+		markup = myFoodora.getMarkup();
+		serviceFee = myFoodora.getServiceFee();
+		deliveryCost = myFoodora.getDeliveryCost();
+		for (Order order : myFoodora.getOrders()) {
+			// if the date of order is between start date and end date, the income will be included
+			if(startDate.compareTo(order.getDate()) <= 0 &&  order.getDate().compareTo(endDate) <= 0)
+				totalIncome += order.getFinalPrice()*markup+serviceFee-deliveryCost;
+		}
+		return totalIncome;
+	}
+	
+	public double getAverageIncome(Date startDate, Date endDate){
+		double totalIncome, markup, serviceFee, deliveryCost;
+		int num;
+		num = 0;
+		totalIncome = 0;
+		markup = myFoodora.getMarkup();
+		serviceFee = myFoodora.getServiceFee();
+		deliveryCost = myFoodora.getDeliveryCost();
+		for (Order order : myFoodora.getOrders()) {
+			// if the date of order is between start date and end date, the income will be included
+			if(startDate.compareTo(order.getDate()) <= 0 &&  order.getDate().compareTo(endDate) <= 0){
+				totalIncome += order.getFinalPrice()*markup+serviceFee-deliveryCost;
+				num++;
+			}
+		}
+		return totalIncome/num;
+	}
+	
+	public Restaurant getMostSellingRestaurant(){
+		ArrayList<Restaurant> rs = new ArrayList<Restaurant>();
+		rs = myFoodora.getRestaurants();
+		Collections.sort(rs, new Comparator<Restaurant>() {
+			@Override
+			public int compare(Restaurant r1, Restaurant r2){
+				return r2.getOrders().size() - r1.getOrders().size();
+			}
+		});
+		return rs.get(0);
+	}
+	
+	public Restaurant getLeastSellingRestaurant(){
+		ArrayList<Restaurant> rs = new ArrayList<Restaurant>();
+		rs = myFoodora.getRestaurants();
+		Collections.sort(rs, new Comparator<Restaurant>() {
+			@Override
+			public int compare(Restaurant r1, Restaurant r2){
+				return r1.getOrders().size() - r2.getOrders().size();
+			}
+		});
+		return rs.get(0);
+	}
+	
+	public Restaurant getMostActiveCourier(){
+		ArrayList<Courier> cs = new ArrayList<Courier>();
+		cs = myFoodora.getCouriers();
+		Collections.sort(cs, new Comparator<Courier>() {
+			@Override
+			public int compare(Courier r1, Courier r2){
+				return r2.counterOfDeliveredOrder() - r1.counterOfDeliveredOrder();
+			}
+		});
+		return rs.get(0);
+	}
+}
