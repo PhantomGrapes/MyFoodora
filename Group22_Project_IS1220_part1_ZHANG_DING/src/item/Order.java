@@ -1,6 +1,7 @@
 package item;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import user.Courier;
@@ -23,8 +24,19 @@ public class Order {
 	
 	private double finalPrice;
 	
+	private Calendar calendar;
 	private Date date;
 
+	public Order(){
+		this.customer = new Customer();
+		this.courier = new Courier();
+		this.restaurant = new Restaurant();
+		this.itemList = new ArrayList<Item>();
+		this.mealList = new ArrayList<Meal>();
+		this.finalPrice = 0;
+		this.calendar = Calendar.getInstance();
+		this.date = calendar.getTime();
+	}
 // getter and setter
 	public Customer getCustomer() {
 		return customer;
@@ -69,7 +81,6 @@ public class Order {
 	public double getFinalPrice() {
 		return finalPrice;
 	}
-
 	
 	public void setFinalPrice(double finalPrice) {
 		this.finalPrice = finalPrice;

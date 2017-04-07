@@ -21,6 +21,8 @@ public class User {
 	MyFoodora myFoodora;
 
 //new add Constructors of User
+	public User(){}
+	
 	public User(String _name, String _username, String _password){
 		name = _name;
 		username = _username;

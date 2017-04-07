@@ -33,6 +33,8 @@ public class Customer extends User{
 	
 	private int fidelityPoint;
 	
+// constructor
+	public Customer(){}
 	
 	public Customer(String _name, String surname, String _username, Coordinate address, String _password) {
 		super(_name, _username, _password);

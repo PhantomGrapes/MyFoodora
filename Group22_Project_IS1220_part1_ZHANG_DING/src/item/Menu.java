@@ -12,13 +12,40 @@ public class Menu {
 	ArrayList<Item> items;
 	ArrayList<Meal> fullMeals;
 	ArrayList<Meal> halfMeals;
-	
+
+// getter and setter
+	public ArrayList<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(ArrayList<Item> items) {
+		this.items = items;
+	}
+
+	public ArrayList<Meal> getFullMeals() {
+		return fullMeals;
+	}
+
+	public void setFullMeals(ArrayList<Meal> fullMeals) {
+		this.fullMeals = fullMeals;
+	}
+
+	public ArrayList<Meal> getHalfMeals() {
+		return halfMeals;
+	}
+
+	public void setHalfMeals(ArrayList<Meal> halfMeals) {
+		this.halfMeals = halfMeals;
+	}
+
+// Constructor
 	public Menu() {
 		items = new ArrayList<Item>();
 		fullMeals = new ArrayList<Meal>();
 		halfMeals = new ArrayList<Meal>();
 	}
 
+// functions
 	public void addItem(Item item){
 		if(!(items.contains(item)))
 			items.add(item);

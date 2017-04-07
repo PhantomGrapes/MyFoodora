@@ -22,6 +22,8 @@ public class Courier extends User{
 	private ArrayList<Order> deliveredOrders = new ArrayList<Order>();
 	
 // Constructor of Courier
+	public Courier(){}
+	
 	public Courier(String _name, String surname, String _username, Coordinate address, String _password) {
 		super(_name, _username, _password);
 		this.surname = surname;

@@ -26,6 +26,8 @@ public class Restaurant extends User{
 	
 	private ArrayList<Order> orders = new ArrayList<Order>();
 
+// new add constructor
+	public Restaurant(){}
 	
 	public Restaurant(String _name, Coordinate _address, String _username, String _password) {
 		super(_name, _username, _password);

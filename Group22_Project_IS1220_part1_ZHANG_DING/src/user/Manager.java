@@ -17,6 +17,8 @@ public class Manager extends User{
 	private String surname;
 	
 // new add Constructor of manager
+	public Manager(){}
+	
 	public Manager(String _name, String surname, String _username, String _password) {
 		super(_name, _username, _password);
 		this.surname = surname;

@@ -7,6 +7,7 @@ import policy.DeliveryPolicy;
 import policy.TargetProfitPolicy;
 import user.Courier;
 import user.Customer;
+import user.Manager;
 import user.Restaurant;
 import user.User;
 
@@ -141,6 +142,7 @@ public class MyFoodora {
 	}
 	
 	public static void main(String[] args) {
+		
 		
 	}
 
