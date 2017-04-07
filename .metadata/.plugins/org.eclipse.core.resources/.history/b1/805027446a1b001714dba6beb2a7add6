@@ -135,6 +135,7 @@ public class Customer extends User{
 		if(meals != null && meals.size()>0){
 			for (Meal meal : meals) {
 				meal.setSoldNumber(meal.getSoldNumber()+1);
+>>>>>>> ffd4c32b412d8a99a342ab9f401addde5982789c
 			}
 		}
 		
