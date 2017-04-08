@@ -34,6 +34,7 @@ public class Restaurant extends User{
 		this.address = _address;
 		this.sortPolicy = new SortHalfMeal();
 		this.menu = new Menu();
+		this.menu.setRestaurant(this);
 		this.genericDiscountFactor = 0.05;
 		this.specialDiscountFactor = 0.1;
 	}

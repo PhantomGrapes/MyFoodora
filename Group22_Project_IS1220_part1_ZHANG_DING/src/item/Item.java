@@ -12,8 +12,28 @@ public class Item implements Offer{
 	private String preference;
 	int soldNumber;
 	
+	private Menu menu;
+	
 	private double price;
 	
+	public Item(String name, String type, String preference, double price) {
+		super();
+		this.name = name;
+		this.type = type;
+		this.preference = preference;
+		this.price = price;
+		this.menu = new Menu();
+		this.soldNumber = 0;
+	}
+
+	public Menu getMenu() {
+		return menu;
+	}
+
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}
+
 	public String getName() {
 		return name;
 	}
