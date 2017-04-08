@@ -21,6 +21,7 @@ public class MyFoodoraTest {
 	User user3 = new Manager();
 	User user4 = new Courier();	
 
+	TestUseData data = new TestUseData();
 	@Test
 	public void testAddUser() {
 		myFoodora.addUser(user1);
@@ -45,7 +46,7 @@ public class MyFoodoraTest {
 
 	@Test
 	public void testSendEmailTo() {
-		
+		data.data1();
 		fail("Not yet implemented");
 	}
 
