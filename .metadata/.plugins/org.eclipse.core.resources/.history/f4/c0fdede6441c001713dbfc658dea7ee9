@@ -50,10 +50,6 @@ public class BasicPlanTest {
 		Item i1 = new Item("fromage", "Starter", "standard", 4);
 		Item i2 = new Item("pizza", "Main-dish", "standard", 10);
 		Item i3 = new Item("cake", "Dessert", "standard", 5);
-		Meal meal = new Meal("BurgerKing", "fullMeal", "vegetarian");
-		meal.addToMealComposer(i1);
-		meal.addToMealComposer(i2);
-		meal.addToMealComposer(i3);
 		Restaurant r = new Restaurant("HappyHour", new Coordinate(2, 3), "r1", "1234567");
 		Menu m = new Menu();
 		m.addItem(i1);
