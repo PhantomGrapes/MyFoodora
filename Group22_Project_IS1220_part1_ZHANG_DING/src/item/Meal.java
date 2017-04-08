@@ -66,6 +66,7 @@ public class Meal implements Offer {
 	}
 	
 	public double getPrice() {
+		calculatePrice();
 		return price;
 	}
 
