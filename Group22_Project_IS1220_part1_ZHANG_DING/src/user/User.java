@@ -32,7 +32,7 @@ public class User {
 		ID = generator.getNextIDNumber();
 	}
 	
-// Register/Unregister to system
+// Register/Unregister/Login/Logout to system
 	public void registerToSystem(){
 		
 	}
@@ -40,7 +40,16 @@ public class User {
 	public void unregisterToSystem(){
 		
 	}
+	
+	public void loginToSystem(){
+		
+	}
+	
+	public void logourFromSystem(){
+		
+	}
 
+// getter and setter
 	public String getName() {
 		return name;
 	}
