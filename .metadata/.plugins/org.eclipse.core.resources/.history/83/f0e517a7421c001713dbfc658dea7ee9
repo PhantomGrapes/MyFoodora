@@ -31,6 +31,8 @@ public class MyFoodora {
 	double deliveryCost;
 	ArrayList<Order> orders;
 	
+	
+	
 	public MyFoodora() {
 		super();
 		this.users = new ArrayList<User>();
@@ -39,10 +41,10 @@ public class MyFoodora {
 		this.couriers = new ArrayList<Courier>();
 		this.deliveryPolicy = new FastestDeliveryPolicy();
 		this.targetProfitPolicy = new TargetProfitDeliveryCost();
-		this.serviceFee = 10;
-		this.markup = 0.1;
-		this.deliveryCost = 20;
-		this.orders = new ArrayList<Order>();
+		this.serviceFee = serviceFee;
+		this.markup = markup;
+		this.deliveryCost = deliveryCost;
+		this.orders = orders;
 	}
 	
 	
@@ -62,25 +64,10 @@ public class MyFoodora {
 		this.orders = orders;
 	}
 
-	public ArrayList<User> getUsers() {
-		return users;
+
+	public MyFoodora() {
+		super();
 	}
-	public void setUsers(ArrayList<User> users) {
-		this.users = users;
-	}
-	public ArrayList<Customer> getCustomers() {
-		return customers;
-	}
-	public void setCustomers(ArrayList<Customer> customers) {
-		this.customers = customers;
-	}
-	public DeliveryPolicy getDeliveryPolicy() {
-		return deliveryPolicy;
-	}
-	public void setDeliveryPolicy(DeliveryPolicy deliveryPolicy) {
-		this.deliveryPolicy = deliveryPolicy;
-	}
-	
 	public double getServiceFee() {
 		return serviceFee;
 	}
@@ -125,7 +112,6 @@ public class MyFoodora {
 	public void setCouriers(ArrayList<Courier> couriers) {
 		this.couriers = couriers;
 	}
-	
 	public void addUser(User user){
 		users.add(user);
 		if(user instanceof Customer)

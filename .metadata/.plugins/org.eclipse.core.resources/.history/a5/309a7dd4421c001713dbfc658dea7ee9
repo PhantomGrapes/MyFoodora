@@ -31,6 +31,9 @@ public class MyFoodora {
 	double deliveryCost;
 	ArrayList<Order> orders;
 	
+<<<<<<< HEAD
+	
+	
 	public MyFoodora() {
 		super();
 		this.users = new ArrayList<User>();
@@ -62,6 +65,7 @@ public class MyFoodora {
 		this.orders = orders;
 	}
 
+=======
 	public ArrayList<User> getUsers() {
 		return users;
 	}
@@ -80,7 +84,7 @@ public class MyFoodora {
 	public void setDeliveryPolicy(DeliveryPolicy deliveryPolicy) {
 		this.deliveryPolicy = deliveryPolicy;
 	}
-	
+>>>>>>> 3e8b5ebd8927c491a7ee1b4edd382ea7971af652
 	public double getServiceFee() {
 		return serviceFee;
 	}
