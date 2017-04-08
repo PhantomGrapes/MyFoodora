@@ -160,7 +160,7 @@ public class Customer extends User{
 		}
 		
 		if(fidelityPlan instanceof PointPlan){
-			((PointPlan) fidelityPlan).setFidelityPoint(((PointPlan) fidelityPlan).getFidleityPoint() + (int)((int)currentOrder.getFinalPrice()/10));
+			((PointPlan) fidelityPlan).setFidelityPoint(((PointPlan) fidelityPlan).getFidleityPoint() + (double)((double)currentOrder.getFinalPrice() *0.1));
 		}
 	}
 	
