@@ -20,8 +20,9 @@ public class MyFoodoraTest {
 	User user2 = new Restaurant();
 	User user3 = new Manager();
 	User user4 = new Courier();	
-
+	
 	TestUseData data = new TestUseData();
+	
 	@Test
 	public void testAddUser() {
 		myFoodora.addUser(user1);
@@ -45,24 +46,33 @@ public class MyFoodoraTest {
 	}
 
 	@Test
-	public void testSendEmailTo() {
+	public void testSendEmailTo() throws Exception {
 		data.data1();
-		fail("Not yet implemented");
+		myFoodora.sendEmailTo(data.c, "Hello");
 	}
 
 	@Test
-	public void testSendSMSTo() {
-		fail("Not yet implemented");
+	public void testSendSMSTo() throws Exception {
+		data.data1();
+		myFoodora.sendSMSTo(data.c, "Hello");
 	}
 
 	@Test
-	public void testNotifyUsers() {
-		fail("Not yet implemented");
+	public void testNotifyUsers() throws Exception {
+		data.data1();
+		myFoodora.addUser(data.c);
+		myFoodora.notifyUsers("haha");
 	}
 
 	@Test
-	public void testAllocateCourier() {
-		fail("Not yet implemented");
+	public void testAllocateCourier() throws Exception {
+		data.data1();
+		myFoodora.addUser(data.c);
+		data.c.creatOrder(data.r);
+		data.c.addToOrder(data.meal, 1);
+		Courier courier = new Courier();
+		myFoodora.addUser(courier);
+		myFoodora.allocateCourier(data.c.getCurrentOrder());
 	}
 
 }
