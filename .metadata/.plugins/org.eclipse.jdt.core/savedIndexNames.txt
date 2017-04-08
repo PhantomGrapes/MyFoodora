@@ -10,7 +10,6 @@ INDEX VERSION 1.129+U:\github\Group22_Project_IS1220_ZHANG_DING\MyFoodora\.metad
 2506155631.index
 889543655.index
 2028463587.index
-4055613912.index
 342727568.index
 244577733.index
 4211195435.index
