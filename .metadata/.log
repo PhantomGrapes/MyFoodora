@@ -2535,3 +2535,57 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.ui 4 4 2017-04-08 17:35:43.120
 !MESSAGE Conflicting handlers for org.eclipse.papyrus.infra.ui.menu.commands.QuickFormattingCapitalizeFirstLetterCommand: {org.eclipse.papyrus.uml.modelexplorer.handler.UmlQuickFormatHandler} vs {org.eclipse.papyrus.uml.diagram.menu.actions.handlers.DiagramQuickFormatHandler}
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-04-08 17:51:30.405
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [testCalculateFinalPriceAL() [in BasicPlanTest [in [Working copy] BasicPlanTest.java [in item [in src [in Group22_Project_IS1220_part1_ZHANG_DING]]]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:556)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:590)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:316)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:302)
+	at org.eclipse.jdt.internal.core.SourceRefElement.getSourceRange(SourceRefElement.java:218)
+	at org.eclipse.jdt.internal.core.Member.getJavadocRange(Member.java:291)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:658)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:534)
+	at org.eclipse.jdt.internal.ui.infoviews.JavadocView.getJavadocHtml(JavadocView.java:1073)
+	at org.eclipse.jdt.internal.ui.infoviews.JavadocView.computeInput(JavadocView.java:874)
+	at org.eclipse.jdt.internal.ui.infoviews.AbstractInfoView$2.run(AbstractInfoView.java:728)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2017-04-08 17:51:30.445
+!MESSAGE testCalculateFinalPriceAL() [in BasicPlanTest [in [Working copy] BasicPlanTest.java [in item [in src [in Group22_Project_IS1220_part1_ZHANG_DING]]]]] does not exist
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-04-08 17:51:30.462
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [testCalculateFinalPriceA() [in BasicPlanTest [in [Working copy] BasicPlanTest.java [in item [in src [in Group22_Project_IS1220_part1_ZHANG_DING]]]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:556)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:590)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:316)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:302)
+	at org.eclipse.jdt.internal.core.SourceRefElement.getSourceRange(SourceRefElement.java:218)
+	at org.eclipse.jdt.internal.core.Member.getJavadocRange(Member.java:291)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:658)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:534)
+	at org.eclipse.jdt.internal.ui.infoviews.JavadocView.getJavadocHtml(JavadocView.java:1073)
+	at org.eclipse.jdt.internal.ui.infoviews.JavadocView.computeInput(JavadocView.java:874)
+	at org.eclipse.jdt.internal.ui.infoviews.AbstractInfoView$2.run(AbstractInfoView.java:728)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2017-04-08 17:51:30.463
+!MESSAGE testCalculateFinalPriceA() [in BasicPlanTest [in [Working copy] BasicPlanTest.java [in item [in src [in Group22_Project_IS1220_part1_ZHANG_DING]]]]] does not exist
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-04-08 17:51:32.916
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [testCalculateFinalPriceALaCa() [in BasicPlanTest [in [Working copy] BasicPlanTest.java [in item [in src [in Group22_Project_IS1220_part1_ZHANG_DING]]]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:556)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:590)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:316)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:302)
+	at org.eclipse.jdt.internal.core.SourceRefElement.getSourceRange(SourceRefElement.java:218)
+	at org.eclipse.jdt.internal.core.Member.getJavadocRange(Member.java:291)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:658)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:534)
+	at org.eclipse.jdt.internal.ui.infoviews.JavadocView.getJavadocHtml(JavadocView.java:1073)
+	at org.eclipse.jdt.internal.ui.infoviews.JavadocView.computeInput(JavadocView.java:874)
+	at org.eclipse.jdt.internal.ui.infoviews.AbstractInfoView$2.run(AbstractInfoView.java:728)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2017-04-08 17:51:32.917
+!MESSAGE testCalculateFinalPriceALaCa() [in BasicPlanTest [in [Working copy] BasicPlanTest.java [in item [in src [in Group22_Project_IS1220_part1_ZHANG_DING]]]]] does not exist

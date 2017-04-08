@@ -41,10 +41,10 @@ public class MyFoodora {
 		this.couriers = new ArrayList<Courier>();
 		this.deliveryPolicy = new FastestDeliveryPolicy();
 		this.targetProfitPolicy = new TargetProfitDeliveryCost();
-		this.serviceFee = 10;
-		this.markup = 0.1;
-		this.deliveryCost = 20;
-		this.orders = new ArrayList<Order>();
+		this.serviceFee = serviceFee;
+		this.markup = markup;
+		this.deliveryCost = deliveryCost;
+		this.orders = orders;
 	}
 	
 	
@@ -64,6 +64,10 @@ public class MyFoodora {
 		this.orders = orders;
 	}
 
+
+	public MyFoodora() {
+		super();
+	}
 	public double getServiceFee() {
 		return serviceFee;
 	}

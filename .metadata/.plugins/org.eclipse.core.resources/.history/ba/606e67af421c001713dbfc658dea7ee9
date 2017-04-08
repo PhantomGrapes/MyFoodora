@@ -64,6 +64,10 @@ public class MyFoodora {
 		this.orders = orders;
 	}
 
+
+	public MyFoodora() {
+		super();
+	}
 	public double getServiceFee() {
 		return serviceFee;
 	}
