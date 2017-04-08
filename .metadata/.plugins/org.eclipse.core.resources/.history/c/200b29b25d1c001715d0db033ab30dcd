@@ -1,0 +1,19 @@
+package user;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CourierTest {
+
+	@Test
+	public void testAcceptTheOrder() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCounterOfDeliveredOrder() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="BasicPlanTest" project="Group22_Project_IS1220_part1_ZHANG_DING" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="item.BasicPlanTest" time="0.059">
-    <testcase name="testVisitItem" classname="item.BasicPlanTest" time="0.0"/>
-    <testcase name="testVisitMealWithBigPrice" classname="item.BasicPlanTest" time="0.0"/>
-    <testcase name="testVisitMealWithNormalPrice" classname="item.BasicPlanTest" time="0.0"/>
-    <testcase name="testCalculateFinalPriceALaCart" classname="item.BasicPlanTest" time="0.059"/>
-  </testsuite>
-</testrun>

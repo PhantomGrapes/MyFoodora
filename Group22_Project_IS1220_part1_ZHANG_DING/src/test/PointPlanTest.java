@@ -24,7 +24,7 @@ public class PointPlanTest {
 		data.data1();
 		PointPlan card = new PointPlan();
 		card.setFidelityPoint(100);
-		assertTrue(card.visit(data.meal)==(19));
+		assertTrue(card.visit(data.meal)==19*0.95);
 	}
 
 	@Test

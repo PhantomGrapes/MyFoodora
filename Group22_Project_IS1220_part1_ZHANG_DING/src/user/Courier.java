@@ -54,6 +54,15 @@ public class Courier extends User{
 		this.phoneNumber = phoneNumber;
 	}
 
+	
+	public ArrayList<Order> getDeliveredOrders() {
+		return deliveredOrders;
+	}
+
+	public void setDeliveredOrders(ArrayList<Order> deliveredOrders) {
+		this.deliveredOrders = deliveredOrders;
+	}
+
 	// new add	
 	public Coordinate getAddress(){
 		return address;
