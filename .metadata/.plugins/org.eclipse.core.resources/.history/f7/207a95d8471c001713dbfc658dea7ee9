@@ -10,12 +10,12 @@ import user.Restaurant;
 import utilites.Coordinate;
 
 public class TestUseData {
-	public Item i1,i2,i3;
-	public Meal meal;
-	public Restaurant r;
-	public Menu m;
-	public Customer c;
-	public BasicPlan card;
+	Item i1,i2,i3;
+	Meal meal;
+	Restaurant r;
+	Menu m;
+	Customer c;
+	BasicPlan card;
 	
 	public void data1() throws NumberOutOfRangeException{
 		i1 = new Item("fromage", "Starter", "standard", 4);
