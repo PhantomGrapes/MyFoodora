@@ -35,7 +35,7 @@ public class Order {
 		this.mealList = new ArrayList<Meal>();
 		this.finalPrice = 0;
 		this.calendar = Calendar.getInstance();
-		this.date = calendar.getTime();
+		this.date = (Date) calendar.getTime();
 	}
 // getter and setter
 	public Customer getCustomer() {

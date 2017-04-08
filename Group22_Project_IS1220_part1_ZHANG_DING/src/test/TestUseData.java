@@ -18,6 +18,7 @@ public class TestUseData {
 	public BasicPlan card;
 	
 	public void data1() throws Exception{
+		
 		i1 = new Item("fromage", "Starter", "Standard", 4);
 		i2 = new Item("pizza", "Main-dish", "Standard", 10);
 		i3 = new Item("cake", "Dessert", "Standard", 5);
@@ -25,6 +26,7 @@ public class TestUseData {
 		meal.addToMealComposer(i1);
 		meal.addToMealComposer(i2);
 		meal.addToMealComposer(i3);
+		
 		r = new Restaurant("HappyHour", new Coordinate(2, 3), "r1", "1234567");
 		m = new Menu();
 		m.addItem(i1);
@@ -33,6 +35,7 @@ public class TestUseData {
 		m.setRestaurant(r);
 		r.setMenu(m);
 		meal.setMenu(m);
+		
 		c = new Customer("Potter", "Harry", "HP123", new Coordinate(10, 10), "1234567");
 		card = new BasicPlan();
 		c.registerFidelityPlan(card);
