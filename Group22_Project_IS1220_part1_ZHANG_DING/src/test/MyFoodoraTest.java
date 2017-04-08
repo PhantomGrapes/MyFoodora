@@ -15,15 +15,14 @@ import user.User;
 import utilites.Coordinate;
 
 public class MyFoodoraTest {
+	MyFoodora myFoodora = new MyFoodora();
+	User user1 = new Customer();
+	User user2 = new Restaurant();
+	User user3 = new Manager();
+	User user4 = new Courier();	
 
 	@Test
 	public void testAddUser() {
-		MyFoodora myFoodora = new MyFoodora();
-		User user1 = new Customer();
-		User user2 = new Restaurant();
-		User user3 = new Manager();
-		User user4 = new Courier();	
-
 		myFoodora.addUser(user1);
 		myFoodora.addUser(user2);
 		myFoodora.addUser(user3);
@@ -34,11 +33,19 @@ public class MyFoodoraTest {
 
 	@Test
 	public void testRemoveUser() {
-		fail("Not yet implemented");
+		myFoodora.addUser(user1);
+		myFoodora.addUser(user2);
+		myFoodora.addUser(user3);
+		myFoodora.addUser(user4);
+		
+		myFoodora.removeUser(user2);
+		
+		assertTrue(myFoodora.getRestaurants().size()==0);	
 	}
 
 	@Test
 	public void testSendEmailTo() {
+		
 		fail("Not yet implemented");
 	}
 
