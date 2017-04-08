@@ -24,11 +24,7 @@ public class LotteryPlan implements FidelityPlan{
 	
 	@Override
 	public double visit(Meal meal){
-		double priceOfMeal = 0;
-		for(Item i: meal.getMealComposer()){
-			priceOfMeal = priceOfMeal + i.getPrice();
-		}
-		return priceOfMeal;
+		return meal.getPrice();
 	}
 
 	@Override
