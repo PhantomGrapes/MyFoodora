@@ -18,12 +18,6 @@ public class MyFoodoraTest {
 
 	@Test
 	public void testAddUser() {
-		ArrayList<User> users = new ArrayList<User>();
-		ArrayList<Manager> managers = new ArrayList<Manager>();
-		ArrayList<Customer> customers = new ArrayList<Customer>();
-		ArrayList<Restaurant> restaurants = new ArrayList<Restaurant>();
-		ArrayList<Courier> couriers = new ArrayList<Courier>();
-		
 		MyFoodora myFoodora = new MyFoodora();
 		User user1 = new Customer();
 		User user2 = new Restaurant();
@@ -35,19 +29,7 @@ public class MyFoodoraTest {
 		myFoodora.addUser(user3);
 		myFoodora.addUser(user4);
 		
-		users.add(user1);
-		users.add(user2);
-		users.add(user3);
-		users.add(user4);
-		
-		managers.add((Manager) user3);
-		customers.add((Customer) user1);
-		restaurants.add((Restaurant) user2);
-		couriers.add((Courier) user4);
-		
-		assertEquals(myFoodora.getCouriers().get(0), couriers.get(0));
-
-		
+		assertTrue(myFoodora.getUsers().get(0) == user1);	
 	}
 
 	@Test
