@@ -6,19 +6,19 @@ package item;
  */
 
 public class PointPlan implements FidelityPlan{
-	private int fidleityPoint;
+	private double fidleityPoint;
 	
 	public PointPlan() {
 		super();
 		this.fidleityPoint = 0;
 	}
 
-	public int getFidleityPoint() {
-		return fidleityPoint;
+	public double getFidleityPoint() {
+		return this.fidleityPoint;
 	}
 
 	@Override
-	public void setFidelityPoint(int fidleityPoint) {
+	public void setFidelityPoint(double fidleityPoint) {
 		this.fidleityPoint = fidleityPoint;
 	}
 
