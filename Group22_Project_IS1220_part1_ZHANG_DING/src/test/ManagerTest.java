@@ -31,9 +31,8 @@ public class ManagerTest {
 		
 		myFoodora.getOrders().add(order1);
 		myFoodora.getOrders().add(order2);
-		
-		manager.getTotalIncome(date, date);
-		
+
+		assertTrue(manager.getTotalIncome(date, date)==(22*0.1 +10*2 - 20*2));	
 	}
 
 	@Test
@@ -51,7 +50,8 @@ public class ManagerTest {
 		myFoodora.getOrders().add(order2);
 		
 		manager.getAverageIncome(date, date);
-
+		System.out.println(manager.getAverageIncome(date, date));
+		assertTrue(manager.getAverageIncome(date, date)==(11*0.1 +10 - 20));
 	}
 
 	@Test
