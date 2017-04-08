@@ -49,13 +49,13 @@ public class LotteryPlan implements FidelityPlan{
 	}
 
 	@Override
-	public int getFidleityPoint() {
+	public double getFidleityPoint() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public void setFidelityPoint(int i) {
+	public void setFidelityPoint(double i) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -40,12 +40,12 @@ public class BasicPlan implements FidelityPlan{
 	}
 
 	@Override
-	public int getFidleityPoint() {
+	public double getFidleityPoint() {
 		return 0;
 	}
 
 	@Override
-	public void setFidelityPoint(int i) {
+	public void setFidelityPoint(double i) {
 		
 	}
 }
