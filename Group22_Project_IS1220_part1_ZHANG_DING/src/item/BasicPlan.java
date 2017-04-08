@@ -38,4 +38,14 @@ public class BasicPlan implements FidelityPlan{
 		}
 		return priceOfOrder;
 	}
+
+	@Override
+	public int getFidleityPoint() {
+		return 0;
+	}
+
+	@Override
+	public void setFidelityPoint(int i) {
+		
+	}
 }

@@ -12,5 +12,9 @@ public interface FidelityPlan {
 	public double visit(Item item);
 	
 	public double visit(Meal meal);
+
+	public int getFidleityPoint();
+
+	public void setFidelityPoint(int i);
 	
 }

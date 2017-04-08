@@ -29,7 +29,7 @@ public class MyFoodoraTest {
 		myFoodora.addUser(user3);
 		myFoodora.addUser(user4);
 		
-		assertTrue(myFoodora.getUsers().get(0) == user1);	
+		assertTrue(myFoodora.getRestaurants().get(0) == user2);	
 	}
 
 	@Test

@@ -6,7 +6,22 @@ package item;
  */
 
 public class PointPlan implements FidelityPlan{
+	private int fidleityPoint;
 	
+	public PointPlan() {
+		super();
+		this.fidleityPoint = 0;
+	}
+
+	public int getFidleityPoint() {
+		return fidleityPoint;
+	}
+
+	@Override
+	public void setFidelityPoint(int fidleityPoint) {
+		this.fidleityPoint = fidleityPoint;
+	}
+
 	@Override
 	public double visit(Item item){
 		return item.getPrice();
@@ -31,10 +46,11 @@ public class PointPlan implements FidelityPlan{
 			priceOfOrder = priceOfOrder + (m.accept(fp) * genericDF);
 		}
 		
-		if(order.getCustomer().getFidelityPoint() >= 100){
+		if(order.getCustomer().getFidelityPlan().getFidleityPoint() >= 100){
 			priceOfOrder = priceOfOrder * 0.9;
-			order.getCustomer().setFidelityPoint(order.getCustomer().getFidelityPoint() - 100); 
+			order.getCustomer().getFidelityPlan().setFidelityPoint(order.getCustomer().getFidelityPlan().getFidleityPoint() - 100); 
 		}
 		return priceOfOrder;
 	}
+
 }
