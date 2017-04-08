@@ -18,14 +18,14 @@ public class Item implements Offer{
 	
 	private double price;
 	
-	public Item(String name, String type, String preference, double price) throws NumberOutOfRangeException,IllegalArgumentException{
+	public Item(String name, String type, String preference, double price) throws NumberOutOfRangeException{
 		super();
 		if (price > Math.pow(10, 300))
 			throw new NumberOutOfRangeException();
-		setName(name);
-		setType(type);
-		setPreference(preference);
-		setPrice(price);
+		this.name = name;
+		this.type = type;
+		this.preference = preference;
+		this.price = price;
 		this.menu = new Menu();
 		this.soldNumber = 0;
 	}
@@ -61,11 +61,11 @@ public class Item implements Offer{
 		return preference;
 	}
 
-	public void setPreference(String preference)throws IllegalArgumentException {
+	public void setPreference(String preference) {
 		if(preference == "Standard" || preference == "Vegetarian" || preference == "Gluten-free")
 			this.preference = preference;
 		else
-			throw new IllegalArgumentException("Your input of Preference is not correct.Please re-input.\n");
+			System.out.println("Your input of Preference is not correct.Please re-input.\n");
 	}
 
 	//new add
@@ -82,11 +82,11 @@ public class Item implements Offer{
 		return price;
 	}
 
-	public void setPrice(double price)throws IllegalArgumentException {
-		if(price >= 0)
+	public void setPrice(double price) {
+		if(price > 0)
 			this.price = price;
 		else
-			throw new IllegalArgumentException("Invalid price");
+			System.out.println("Please re-input the price.\n");
 	}
 
 	public double accept(FidelityPlan fidelityPlan){

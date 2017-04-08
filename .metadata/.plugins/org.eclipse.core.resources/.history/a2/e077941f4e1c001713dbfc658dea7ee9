@@ -1,0 +1,26 @@
+package item;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import exception.NumberOutOfRangeException;
+
+public class ItemTest {
+
+	@Test(expected=IllegalArgumentException.class)
+	public void testSetType() throws NumberOutOfRangeException {
+		Item i = new Item("burger", "jfiwej", "Standard", 1);
+	}
+
+	@Test
+	public void testSetPreference() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetPrice() {
+		fail("Not yet implemented");
+	}
+
+}
