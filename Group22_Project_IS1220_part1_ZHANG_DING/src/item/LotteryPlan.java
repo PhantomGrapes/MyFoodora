@@ -47,4 +47,16 @@ public class LotteryPlan implements FidelityPlan{
 			return priceOfOrder;
 		}
 	}
+
+	@Override
+	public int getFidleityPoint() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setFidelityPoint(int i) {
+		// TODO Auto-generated method stub
+		
+	}
 }

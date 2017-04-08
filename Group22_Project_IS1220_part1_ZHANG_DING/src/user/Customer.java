@@ -31,8 +31,6 @@ public class Customer extends User{
 	private Order currentOrder;
 	private ArrayList<Order> historyOrders = new ArrayList<Order>();
 	
-	private int fidelityPoint;
-	
 // constructor
 	public Customer(){}
 	
@@ -47,7 +45,6 @@ public class Customer extends User{
 		this.fidelityPlan = new BasicPlan();
 		this.currentOrder = null;
 		this.historyOrders = new ArrayList<Order>();
-		this.fidelityPoint = 0;
 	}
 
 // getters and setters
@@ -102,14 +99,6 @@ public class Customer extends User{
 
 	public void setAddress(Coordinate address) {
 		this.address = address;
-	}
-
-	public int getFidelityPoint() {
-		return fidelityPoint;
-	}
-
-	public void setFidelityPoint(int fidelityPoint) {
-		this.fidelityPoint = fidelityPoint;
 	}
 
 // Create an order, Pick items, Finish an order
@@ -171,7 +160,7 @@ public class Customer extends User{
 		}
 		
 		if(fidelityPlan instanceof PointPlan){
-			fidelityPoint = fidelityPoint + (int)((int)currentOrder.getFinalPrice()/10);
+			((PointPlan) fidelityPlan).setFidelityPoint(((PointPlan) fidelityPlan).getFidleityPoint() + (int)((int)currentOrder.getFinalPrice()/10));
 		}
 	}
 	
