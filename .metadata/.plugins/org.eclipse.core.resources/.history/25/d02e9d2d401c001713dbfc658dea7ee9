@@ -39,7 +39,6 @@ public class BasicPlanTest {
 		meal.addToMealComposer(i2);
 		meal.addToMealComposer(i3);
 		BasicPlan card = new BasicPlan();
-		card.visit(meal);
 	}
 
 	@Test
