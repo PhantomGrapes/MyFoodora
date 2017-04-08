@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import item.Order;
-import myFoodora.MyFoodora;
 
 /**
  * @author Shoulong
@@ -20,10 +19,9 @@ public class Manager extends User{
 // new add Constructor of manager
 	public Manager(){}
 	
-	public Manager(String _name, String surname, String _username, String _password, MyFoodora myFoodora) {
+	public Manager(String _name, String surname, String _username, String _password) {
 		super(_name, _username, _password);
 		this.surname = surname;
-		this.myFoodora = myFoodora;
 	}
 	
 	public double getTotalIncome(Date startDate, Date endDate){
