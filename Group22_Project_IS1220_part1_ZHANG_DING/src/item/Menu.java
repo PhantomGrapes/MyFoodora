@@ -49,12 +49,19 @@ public class Menu {
 		this.restaurant = restaurant;
 	}
 
-	// Constructor
+// Constructor
 	public Menu() {
 		items = new ArrayList<Item>();
 		fullMeals = new ArrayList<Meal>();
 		halfMeals = new ArrayList<Meal>();
 		restaurant = new Restaurant();
+	}
+	
+	public Menu(Restaurant _restaurant){
+		items = new ArrayList<Item>();
+		fullMeals = new ArrayList<Meal>();
+		halfMeals = new ArrayList<Meal>();
+		restaurant = _restaurant;
 	}
 
 // functions

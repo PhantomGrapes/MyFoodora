@@ -43,7 +43,7 @@ public class Customer extends User{
 		this.canBeNotified = true;
 		this.isNotifiedByEmail = true;
 		this.fidelityPlan = new BasicPlan();
-		this.currentOrder = null;
+		this.currentOrder = new Order();
 		this.historyOrders = new ArrayList<Order>();
 	}
 

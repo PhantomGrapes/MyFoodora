@@ -62,6 +62,7 @@ public class MyFoodora {
 		this.orders = orders;
 	}
 
+// getter and setter
 	public ArrayList<User> getUsers() {
 		return users;
 	}
@@ -126,6 +127,7 @@ public class MyFoodora {
 		this.couriers = couriers;
 	}
 	
+// methods
 	public void addUser(User user){
 		users.add(user);
 		if(user instanceof Customer)

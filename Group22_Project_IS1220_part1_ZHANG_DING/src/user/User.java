@@ -48,7 +48,7 @@ public class User {
 	public void logourFromSystem(){
 		
 	}
-
+	
 // getter and setter
 	public String getName() {
 		return name;
