@@ -299,6 +299,6 @@ public class ScenarioTest {
 		menu5.getFullMeals().add(meal4g);
 		menu5.getFullMeals().get(4).setSpecialOffer(true);
 	
-		
+		myFoodora.notifyUsers("Welcome to MyFoodora. You are agree to be notified of special offers");
 	}
 }
