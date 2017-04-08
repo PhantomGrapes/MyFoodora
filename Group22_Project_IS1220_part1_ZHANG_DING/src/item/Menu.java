@@ -2,6 +2,8 @@ package item;
 
 import java.util.ArrayList;
 
+import user.Restaurant;
+
 
 /**
  * @author Dingo
@@ -12,6 +14,7 @@ public class Menu {
 	ArrayList<Item> items;
 	ArrayList<Meal> fullMeals;
 	ArrayList<Meal> halfMeals;
+	private Restaurant restaurant;
 
 // getter and setter
 	public ArrayList<Item> getItems() {
@@ -37,18 +40,29 @@ public class Menu {
 	public void setHalfMeals(ArrayList<Meal> halfMeals) {
 		this.halfMeals = halfMeals;
 	}
+	
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
 
-// Constructor
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
+
+	// Constructor
 	public Menu() {
 		items = new ArrayList<Item>();
 		fullMeals = new ArrayList<Meal>();
 		halfMeals = new ArrayList<Meal>();
+		restaurant = new Restaurant();
 	}
 
 // functions
 	public void addItem(Item item){
-		if(!(items.contains(item)))
+		if(!(items.contains(item))){
 			items.add(item);
+			item.setMenu(this);
+		}
 	}
 	
 	public void removeItem(Item item){
@@ -57,10 +71,14 @@ public class Menu {
 	}
 	
 	public void addMeal(Meal meal){
-		if(meal.getType()=="fullMeal")
+		if(meal.getType()=="fullMeal"){
 			fullMeals.add(meal);
-		else
+			meal.setMenu(this);
+		}
+		else{
 			halfMeals.add(meal);
+			meal.setMenu(this);
+		}
 	}
 	
 	public void removeMeal(Meal meal){

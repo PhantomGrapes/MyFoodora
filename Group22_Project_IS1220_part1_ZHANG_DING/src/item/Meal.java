@@ -12,6 +12,8 @@ public class Meal implements Offer {
 	private String name;
 	private String type;
 	private String preference;
+	
+	private Menu menu;
 	// new add
 	int soldNumber;
 	
@@ -21,6 +23,30 @@ public class Meal implements Offer {
 	
 	private ArrayList<Item> mealComposer = new ArrayList<Item>();
 	
+	public Meal(String name, String type, String preference) {
+		super();
+		this.name = name;
+		this.type = type;
+		this.preference = preference;
+		this.price = 0;
+		this.menu = new Menu();
+		this.soldNumber = 0;
+		this.isSpecialOffer = false;
+		this.mealComposer = new ArrayList<Item>();
+	}
+
+	public Menu getMenu() {
+		return menu;
+	}
+
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}
+
+	public void setMealComposer(ArrayList<Item> mealComposer) {
+		this.mealComposer = mealComposer;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -75,6 +101,7 @@ public class Meal implements Offer {
 
 	public void setSpecialOffer(boolean isSpecialOffer) {
 		this.isSpecialOffer = isSpecialOffer;
+		calculatePrice();
 	}
 
 	public ArrayList<Item> getMealComposer() {
@@ -118,8 +145,28 @@ public class Meal implements Offer {
 		else if(this.type == "Full-Meal" && mealComposer.size() >=3){
 			System.out.println("Cant add more dish to this meal.\n");
 		}
+		
+		calculatePrice();
 	}
 
+	public void calculatePrice(){
+		double gdf = this.getMenu().getRestaurant().getGeneiclDiscountFactor();
+		double sdf = this.getMenu().getRestaurant().getSpecialDiscountFactor();
+		
+		if(this.isSpecialOffer){
+			price = 0;
+			for(Item i:mealComposer){
+				price = price + i.getPrice();
+			}
+			price = price * (1-sdf);
+		}else{
+			price = 0;
+			for(Item i:mealComposer){
+				price = price + i.getPrice();
+			}
+			price = price * (1-gdf);
+		}
+	}
 // calculate price of the meal of order.
 	public double accept(FidelityPlan fidelityPlan){
 		return fidelityPlan.visit(this);
