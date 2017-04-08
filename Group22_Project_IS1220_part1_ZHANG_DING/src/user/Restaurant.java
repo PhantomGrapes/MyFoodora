@@ -40,8 +40,25 @@ public class Restaurant extends User{
 	}
 
 // getter and setter
+	
 	public double getGeneiclDiscountFactor() {
 		return genericDiscountFactor;
+	}
+
+	public SortPolicy getSortPolicy() {
+		return sortPolicy;
+	}
+
+	public void setSortPolicy(SortPolicy sortPolicy) {
+		this.sortPolicy = sortPolicy;
+	}
+
+	public Coordinate getAddress() {
+		return address;
+	}
+
+	public void setAddress(Coordinate address) {
+		this.address = address;
 	}
 
 	public void setGeneiclDiscountFactor(double geneiclDiscountFactor) {

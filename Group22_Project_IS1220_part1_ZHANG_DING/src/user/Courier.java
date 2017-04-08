@@ -38,7 +38,23 @@ public class Courier extends User{
 		address = newAddress;
 	}
 
-// new add	
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	// new add	
 	public Coordinate getAddress(){
 		return address;
 	}
