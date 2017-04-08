@@ -10,7 +10,7 @@ public class PointPlan implements FidelityPlan{
 	
 	public PointPlan() {
 		super();
-		this.fidleityPoint = 0;
+		this.fidelityPoint = 0;
 	}
 	@Override
 	public double getFidleityPoint() {

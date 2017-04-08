@@ -10,7 +10,7 @@ public class PointPlan implements FidelityPlan{
 	
 	public PointPlan() {
 		super();
-		this.fidleityPoint = 0;
+		this.fidelityPoint = 0;
 	}
 	@Override
 	public double getFidleityPoint() {
@@ -20,8 +20,12 @@ public class PointPlan implements FidelityPlan{
 	@Override
 	public void setFidelityPoint(double fidleityPoint) {
 		this.fidleityPoint = fidleityPoint;
-	}
 
+	@Override
+	public void setFidelityPoint(int fidleityPoint) {
+		this.fidelityPoint = fidleityPoint;
+>>>>>>> bb062cef020a4863f8ff3b205ceda5d7011c7f30
+	}
 
 	@Override
 	public double visit(Item item){
