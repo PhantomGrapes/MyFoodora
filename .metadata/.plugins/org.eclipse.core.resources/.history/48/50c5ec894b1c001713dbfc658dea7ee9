@@ -1,0 +1,31 @@
+package item;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import exception.NumberOutOfRangeException;
+import test.TestUseData;
+
+public class PointPlanTest {
+
+	@Test
+	public void testVisitItem() throws NumberOutOfRangeException {
+		TestUseData data = new TestUseData();
+		data.data1();
+		PointPlan card = new PointPlan();
+		card.setFidelityPoint(100);
+		assertTrue(card.visit(data.i1)==4);
+	}
+
+	@Test
+	public void testVisitMeal() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCalculateFinalPrice() {
+		fail("Not yet implemented");
+	}
+
+}
