@@ -36,14 +36,12 @@ public class PointPlan implements FidelityPlan{
 	public double calculateFinalPrice(Order order) {
 		FidelityPlan fp = order.getCustomer().getFidelityPlan();
 		
-		double genericDF = order.getRestaurant().getGeneiclDiscountFactor();
-		
 		double priceOfOrder = 0;
 		for(Item i:order.getItemList()){
 			priceOfOrder = priceOfOrder + i.accept(fp);
 		}
 		for(Meal m:order.getMealList()){
-			priceOfOrder = priceOfOrder + (m.accept(fp) * genericDF);
+			priceOfOrder = priceOfOrder + (m.accept(fp));
 		}
 		
 		if(order.getCustomer().getFidelityPlan().getFidleityPoint() >= 100){

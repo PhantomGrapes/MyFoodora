@@ -131,18 +131,18 @@ public class Customer extends User{
 		}
 	}
 	
-	public void removeFromOrder(Item item)throws Exception{
+	public void removeFromOrder(Item item){
 		if(currentOrder.getItemList().contains(item))
 			currentOrder.removeFromItemList(item);
 		else
-			throw new Exception("There is not this dish in your order");
+			System.out.println("There is not this dish in your order");
 	}
 	
-	public void removeFromOrder(Meal meal)throws Exception{
+	public void removeFromOrder(Meal meal){
 		if(currentOrder.getMealList().contains(meal))
 			currentOrder.removeFromMealList(meal);
 		else
-			throw new Exception("There is not this meal in your order");
+			System.out.println("There is not this meal in your order");
 	}
 	
 	public void finishOrder(){
