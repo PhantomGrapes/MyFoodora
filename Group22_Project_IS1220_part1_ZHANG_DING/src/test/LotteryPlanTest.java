@@ -22,7 +22,7 @@ public class LotteryPlanTest {
 		TestUseData data = new TestUseData();
 		data.data1();
 		LotteryPlan card = new LotteryPlan();
-		assertTrue(card.visit(data.meal)==19);
+		assertTrue(card.visit(data.meal)==19*0.95);
 	}
 
 	@Test
