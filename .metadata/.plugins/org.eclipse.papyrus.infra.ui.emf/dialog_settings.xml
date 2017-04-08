@@ -3,11 +3,36 @@
 	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Type:type">
 		<section name="History">
 			<list key="PreviousSelection">
+				<item value="platform:/resource/MyFoodora/UML/model.uml#_6df9gBoDEeexs5CmLH5EkA"/>
+				<item value="platform:/resource/MyFoodora/UML/model.uml#_MrbEsBo_EeeazM3J-WPctQ"/>
+				<item value="platform:/resource/MyFoodora/UML/model.uml#_ES2SABoEEeexs5CmLH5EkA"/>
+				<item value="platform:/resource/MyFoodora/UML/model.uml#_q1KPQBrKEeeAY_0S9eF64w"/>
 				<item value="platform:/resource/MyFoodora/UML/model.uml#_neDQ8BoDEeexs5CmLH5EkA"/>
 				<item value="platform:/resource/MyFoodora/UML/model.uml#_l_OigBoDEeexs5CmLH5EkA"/>
 			</list>
 		</section>
 	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/Group22_Project_IS1220_part1_ZHANG_DING/UML/model.uml:uml:Type:type">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/Group22_Project_IS1220_part1_ZHANG_DING/UML/model.uml#_mYc2kBrOEeeAY_0S9eF64w"/>
+				<item value="platform:/resource/Group22_Project_IS1220_part1_ZHANG_DING/UML/model.uml#_12eDwBrOEeeAY_0S9eF64w"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/MyFoodora/UML/model.uml:uml:Type:type">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/MyFoodora/UML/model.uml#_6df9gBoDEeexs5CmLH5EkA"/>
+				<item value="platform:/resource/MyFoodora/UML/model.uml#_MrbEsBo_EeeazM3J-WPctQ"/>
+				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+				<item value="platform:/resource/MyFoodora/UML/model.uml#_ES2SABoEEeexs5CmLH5EkA"/>
+				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
+			</list>
+		</section>
+	</section>
 	<section name="org.eclipse.papyrus.infra.ui.emf.customizationManager">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/MyFoodora/UML/model.uml:uml:Constraint:postcondition">
 	</section>
 </section>
