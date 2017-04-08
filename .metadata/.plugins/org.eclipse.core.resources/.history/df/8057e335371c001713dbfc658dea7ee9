@@ -1,0 +1,24 @@
+package item;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class BasicPlanTest {
+
+	@Test
+	public void testVisitItem() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testVisitMeal() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCalculateFinalPrice() {
+		fail("Not yet implemented");
+	}
+
+}

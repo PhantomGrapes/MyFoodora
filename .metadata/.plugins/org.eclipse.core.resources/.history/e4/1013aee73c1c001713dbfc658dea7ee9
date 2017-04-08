@@ -1,0 +1,47 @@
+package item;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class BasicPlanTest {
+
+	@Test
+	public void testVisitItem() {
+		Item item = new Item("pizza", "Main-dish", "standard", 10);
+		BasicPlan card = new BasicPlan();
+		assertTrue(card.visit(item)==10);
+	}
+
+	@Test
+	public void testVisitMealWithNormalPrice() {
+		Meal meal = new Meal("BurgerKing", "fullMeal", "vegetarian");
+		Item i1 = new Item("fromage", "Starter", "standard", 4);
+		Item i2 = new Item("pizza", "Main-dish", "standard", 10);
+		Item i3 = new Item("cake", "Dessert", "standard", 5);
+		meal.addToMealComposer(i1);
+		meal.addToMealComposer(i2);
+		meal.addToMealComposer(i3);
+		BasicPlan card = new BasicPlan();
+		assertTrue(card.visit(meal)==19);
+	}
+	
+	@Test
+	public void testVisitMealWithBigPrice() {
+		Meal meal = new Meal("BurgerKing", "fullMeal", "vegetarian");
+		Item i1 = new Item("fromage", "Starter", "standard", 2099999999*2099999999*2099999999);
+		Item i2 = new Item("pizza", "Main-dish", "standard", 2099999999);
+		Item i3 = new Item("cake", "Dessert", "standard", 2099999999);
+		meal.addToMealComposer(i1);
+		meal.addToMealComposer(i2);
+		meal.addToMealComposer(i3);
+		BasicPlan card = new BasicPlan();
+		System.out.println(card.visit(meal));
+	}
+
+	@Test
+	public void testCalculateFinalPrice() {
+		fail("Not yet implemented");
+	}
+
+}

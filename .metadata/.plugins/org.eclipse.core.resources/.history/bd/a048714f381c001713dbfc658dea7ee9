@@ -1,0 +1,35 @@
+package item;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class BasicPlanTest {
+
+	@Test
+	public void testVisitItem() {
+		Item item = new Item("pizza", "main-dish", "standard", 10);
+		BasicPlan card = new BasicPlan();
+		assertTrue(card.visit(item)==10);
+	}
+
+	@Test
+	public void testVisitMeal() {
+		Meal meal = new Meal("BurgerKing", "fullMeal", "vegetarian");
+		Item i1 = new Item("fromage", "starter", "standard", 4);
+		Item i2 = new Item("pizza", "main-dish", "standard", 10);
+		Item i3 = new Item("cake", "dessert", "standard", 5);
+		meal.addToMealComposer(i1);
+		meal.addToMealComposer(i2);
+		meal.addToMealComposer(i3);
+		BasicPlan card = new BasicPlan();
+		System.out.println(card.visit(meal));
+		assertTrue(card.visit(meal)==19);
+	}
+
+	@Test
+	public void testCalculateFinalPrice() {
+		fail("Not yet implemented");
+	}
+
+}

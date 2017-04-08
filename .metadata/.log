@@ -2517,3 +2517,21 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 4 4 2017-04-08 17:35:42.157
+!MESSAGE Conflicting handlers for org.eclipse.papyrus.infra.ui.menu.commands.QuickFormattingSwitchSpace2UnderscoreCommand: {org.eclipse.papyrus.infra.nattable.modelexplorer.handlers.NattableQuickFormatHandler} vs {org.eclipse.papyrus.uml.modelexplorer.handler.UmlQuickFormatHandler}
+
+!ENTRY org.eclipse.ui 4 4 2017-04-08 17:35:42.196
+!MESSAGE Conflicting handlers for org.eclipse.papyrus.infra.ui.menu.commands.QuickFormattingRemoveSpaceCommand: {org.eclipse.papyrus.uml.modelexplorer.handler.UmlQuickFormatHandler} vs {org.eclipse.papyrus.infra.nattable.modelexplorer.handlers.NattableQuickFormatHandler}
+
+!ENTRY org.eclipse.ui 4 4 2017-04-08 17:35:42.675
+!MESSAGE Conflicting handlers for org.eclipse.papyrus.infra.ui.menu.commands.QuickFormattingLowerCaseCommand: {org.eclipse.papyrus.infra.nattable.modelexplorer.handlers.NattableQuickFormatHandler} vs {org.eclipse.papyrus.uml.modelexplorer.handler.UmlQuickFormatHandler}
+
+!ENTRY org.eclipse.ui 2 2 2017-04-08 17:35:42.835
+!MESSAGE Invalid preference category path: org.eclipse.papyrus.infra.properties.ui.propertyview (bundle: org.eclipse.papyrus.uml.properties, page: org.eclipse.papyrus.uml.properties.multiplicityEditorProperties)
+
+!ENTRY org.eclipse.ui 4 4 2017-04-08 17:35:42.930
+!MESSAGE Conflicting handlers for org.eclipse.papyrus.infra.ui.menu.commands.QuickFormattingUpperCaseCommand: {org.eclipse.papyrus.infra.nattable.modelexplorer.handlers.NattableQuickFormatHandler} vs {org.eclipse.papyrus.uml.diagram.menu.actions.handlers.DiagramQuickFormatHandler}
+
+!ENTRY org.eclipse.ui 4 4 2017-04-08 17:35:43.120
+!MESSAGE Conflicting handlers for org.eclipse.papyrus.infra.ui.menu.commands.QuickFormattingCapitalizeFirstLetterCommand: {org.eclipse.papyrus.uml.modelexplorer.handler.UmlQuickFormatHandler} vs {org.eclipse.papyrus.uml.diagram.menu.actions.handlers.DiagramQuickFormatHandler}

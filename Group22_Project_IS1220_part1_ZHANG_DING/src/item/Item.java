@@ -1,5 +1,7 @@
 package item;
 
+import exception.NumberOutOfRangeException;
+
 /**
  * @author Shoulong
  * Single dishes of a menu of restaurant. 
@@ -16,8 +18,10 @@ public class Item implements Offer{
 	
 	private double price;
 	
-	public Item(String name, String type, String preference, double price) {
+	public Item(String name, String type, String preference, double price) throws NumberOutOfRangeException{
 		super();
+		if (price > Math.pow(10, 300))
+			throw new NumberOutOfRangeException();
 		this.name = name;
 		this.type = type;
 		this.preference = preference;

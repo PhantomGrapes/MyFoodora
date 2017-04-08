@@ -79,7 +79,7 @@ public class Meal implements Offer {
 	}
 
 	public void setType(String type) {
-		if(type == "Half-Meal" || type == "Full-Meal")
+		if(type == "halfMeal" || type == "fullMeal")
 			this.type = type;
 		else
 			System.out.println("Your input of Type is not correct.Please re-input.\n");
@@ -110,7 +110,7 @@ public class Meal implements Offer {
 	}
 
 	public void addToMealComposer(Item item) {
-		if(this.type == "Half-Meal" && mealComposer.size() <= 1){
+		if(this.type == "halfMeal" && mealComposer.size() <= 1){
 			if(mealComposer.size() == 1){
 				if(mealComposer.get(0).getType() == "Main-dish")
 					mealComposer.add(item);
@@ -124,11 +124,11 @@ public class Meal implements Offer {
 			else
 				mealComposer.add(item);
 		}
-		else if(this.type == "Half-Meal" && mealComposer.size() >= 2){
+		else if(this.type == "halfMeal" && mealComposer.size() >= 2){
 			System.out.println("Cant add more dish to this meal.\n");
 		}
 		
-		else if(this.type == "Full-Meal" && mealComposer.size() <=2){
+		else if(this.type == "fullMeal" && mealComposer.size() <=2){
 			if(mealComposer.size() == 0)
 				mealComposer.add(item);
 			else{
@@ -143,7 +143,7 @@ public class Meal implements Offer {
 					System.out.println("The type of dish you want to add is not correct.\n");
 			}
 		}
-		else if(this.type == "Full-Meal" && mealComposer.size() >=3){
+		else if(this.type == "fullMeal" && mealComposer.size() >=3){
 			System.out.println("Cant add more dish to this meal.\n");
 		}
 		
