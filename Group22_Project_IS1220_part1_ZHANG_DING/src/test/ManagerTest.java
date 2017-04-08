@@ -9,12 +9,14 @@ import org.junit.Test;
 
 import item.Order;
 import myFoodora.MyFoodora;
+import user.Courier;
 import user.Manager;
+import user.Restaurant;
 
 public class ManagerTest {
 	
 	MyFoodora myFoodora = new MyFoodora();
-	Manager manager = new Manager("Happy","Newyear","QNMLGB","1234567",myFoodora);
+	Manager manager = new Manager("Happy","Newyear","QNMLGB","1234567", myFoodora);
 	Calendar cal = Calendar.getInstance();
 	Date date;
 
@@ -31,13 +33,12 @@ public class ManagerTest {
 		
 		myFoodora.getOrders().add(order1);
 		myFoodora.getOrders().add(order2);
-
-		assertTrue(manager.getTotalIncome(date, date)==(22*0.1 +10*2 - 20*2));	
+		
+		assertTrue(manager.getTotalIncome(date, date)== -17.8);	
 	}
 
 	@Test
 	public void testGetAverageIncome() {
-		myFoodora.addUser(manager);
 		date = (Date) cal.getTime();
 		
 		Order order1 = new Order();
@@ -49,29 +50,80 @@ public class ManagerTest {
 		myFoodora.getOrders().add(order1);
 		myFoodora.getOrders().add(order2);
 		
-		manager.getAverageIncome(date, date);
-		System.out.println(manager.getAverageIncome(date, date));
-		assertTrue(manager.getAverageIncome(date, date)==(11*0.1 +10 - 20));
+		assertTrue(manager.getAverageIncome(date, date)== -8.9);	
 	}
 
 	@Test
 	public void testGetMostSellingRestaurant() {
-		fail("Not yet implemented");
+		Restaurant res1 = new Restaurant();
+		Restaurant res2 = new Restaurant();
+		
+		myFoodora.addUser(manager);
+		myFoodora.addUser(res1);
+		myFoodora.addUser(res2);
+		
+		Order o1 = new Order();
+		Order o2 = new Order();
+		
+		res1.getOrders().add(o1);
+		res2.getOrders().add(o1);
+		res2.getOrders().add(o2);
+		
+		assertTrue(manager.getMostSellingRestaurant() == res2);
 	}
 
 	@Test
 	public void testGetLeastSellingRestaurant() {
-		fail("Not yet implemented");
+		Restaurant res1 = new Restaurant();
+		Restaurant res2 = new Restaurant();
+		
+		myFoodora.addUser(res1);
+		myFoodora.addUser(res2);
+		
+		Order o1 = new Order();
+		Order o2 = new Order();
+		
+		res1.getOrders().add(o1);
+		res2.getOrders().add(o1);
+		res2.getOrders().add(o2);
+		
+		assertTrue(manager.getLeastSellingRestaurant() == res1);
 	}
 
 	@Test
 	public void testGetMostActiveCourier() {
-		fail("Not yet implemented");
+		Courier courier1 = new Courier();
+		Courier courier2 = new Courier();
+		
+		myFoodora.addUser(courier1);
+		myFoodora.addUser(courier2);
+		
+		Order o1 = new Order();
+		Order o2 = new Order();
+		
+		courier1.getDeliveredOrders().add(o1);
+		courier2.getDeliveredOrders().add(o1);
+		courier2.getDeliveredOrders().add(o2);
+		
+		assertTrue(manager.getMostActiveCourier() == courier2);
 	}
 
 	@Test
 	public void testGetLeastActiveCourier() {
-		fail("Not yet implemented");
+		Courier courier1 = new Courier();
+		Courier courier2 = new Courier();
+		
+		myFoodora.addUser(courier1);
+		myFoodora.addUser(courier2);
+		
+		Order o1 = new Order();
+		Order o2 = new Order();
+		
+		courier1.getDeliveredOrders().add(o1);
+		courier2.getDeliveredOrders().add(o1);
+		courier2.getDeliveredOrders().add(o2);
+		
+		assertTrue(manager.getLeastActiveCourier() == courier1);
 	}
 
 }
