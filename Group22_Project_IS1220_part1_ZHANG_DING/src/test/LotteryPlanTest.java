@@ -10,7 +10,7 @@ import item.LotteryPlan;
 public class LotteryPlanTest {
 
 	@Test
-	public void testVisitItem() throws NumberOutOfRangeException {
+	public void testVisitItem() throws Exception {
 		TestUseData data = new TestUseData();
 		data.data1();
 		LotteryPlan card = new LotteryPlan();
@@ -18,7 +18,7 @@ public class LotteryPlanTest {
 	}
 
 	@Test
-	public void testVisitMeal() throws NumberOutOfRangeException {
+	public void testVisitMeal() throws Exception {
 		TestUseData data = new TestUseData();
 		data.data1();
 		LotteryPlan card = new LotteryPlan();
@@ -26,7 +26,7 @@ public class LotteryPlanTest {
 	}
 
 	@Test
-	public void testCalculateFinalPrice() throws NumberOutOfRangeException {
+	public void testCalculateFinalPrice() throws Exception {
 		TestUseData data = new TestUseData();
 		data.data1();
 		LotteryPlan card = new LotteryPlan();

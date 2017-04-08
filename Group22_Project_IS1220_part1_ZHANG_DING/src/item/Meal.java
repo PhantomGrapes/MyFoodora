@@ -2,6 +2,7 @@ package item;
 
 import java.util.ArrayList;
 
+
 /**
  * @author Shoulong
  * Meal item of a menu of restaurant.
@@ -26,8 +27,8 @@ public class Meal implements Offer {
 	public Meal(String name, String type, String preference) {
 		super();
 		this.name = name;
-		this.type = type;
-		this.preference = preference;
+		setType(type);
+		setPreference(preference);
 		this.price = 0;
 		this.menu = new Menu();
 		this.soldNumber = 0;
@@ -78,22 +79,22 @@ public class Meal implements Offer {
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(String type)throws IllegalArgumentException {
 		if(type == "halfMeal" || type == "fullMeal")
 			this.type = type;
 		else
-			System.out.println("Your input of Type is not correct.Please re-input.\n");
+			throw new IllegalArgumentException("Your input of Type is not correct.Please re-input.\n");
 	}
 	
 	public String getPreference() {
 		return preference;
 	}
 
-	public void setPreference(String preference) {
+	public void setPreference(String preference)throws IllegalArgumentException{
 		if(preference == "Standard" || preference == "Vegetarian" || preference == "Gluten-free")
 			this.preference = preference;
 		else
-			System.out.println("Your input of Preference is not correct.Please re-input.\n");
+			throw new IllegalArgumentException("Your input of Preference is not correct.Please re-input.\n");
 	}
 	
 	public boolean isSpecialOffer() {
@@ -108,8 +109,12 @@ public class Meal implements Offer {
 	public ArrayList<Item> getMealComposer() {
 		return mealComposer;
 	}
-
-	public void addToMealComposer(Item item) {
+// new add
+	public void removeItemFromComposer(Item item){
+		if(mealComposer.contains(item))
+			mealComposer.remove(item);
+	}
+	public void addToMealComposer(Item item)throws Exception {
 		if(this.type == "halfMeal" && mealComposer.size() <= 1){
 			if(mealComposer.size() == 1){
 				if(mealComposer.get(0).getType() == "Main-dish")
@@ -119,13 +124,13 @@ public class Meal implements Offer {
 				else if(mealComposer.get(0).getType() == "Dessert" && item.getType() == "Main-dish")
 					mealComposer.add(item);
 				else
-					System.out.println("The type of dish you want to add is not correct.\n");
+					throw new Exception("The type of dish you want to add is not correct.\n");
 			}
 			else
 				mealComposer.add(item);
 		}
 		else if(this.type == "halfMeal" && mealComposer.size() >= 2){
-			System.out.println("Cant add more dish to this meal.\n");
+			throw new Exception("Can't add more dish to this meal.\n");
 		}
 		
 		else if(this.type == "fullMeal" && mealComposer.size() <=2){
@@ -140,11 +145,11 @@ public class Meal implements Offer {
 				if(!duplicate)
 					mealComposer.add(item);
 				else
-					System.out.println("The type of dish you want to add is not correct.\n");
+					throw new Exception("The type of dish you want to add is not correct.\n");
 			}
 		}
 		else if(this.type == "fullMeal" && mealComposer.size() >=3){
-			System.out.println("Cant add more dish to this meal.\n");
+			throw new Exception("Can't add more dish to this meal.\n");
 		}
 		
 		calculatePrice();

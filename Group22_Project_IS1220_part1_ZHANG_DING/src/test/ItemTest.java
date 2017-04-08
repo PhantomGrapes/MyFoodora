@@ -20,8 +20,12 @@ public class ItemTest {
 	}
 
 	@Test(expected=IllegalArgumentException.class)
-	public void testSetPrice() throws NumberOutOfRangeException,IllegalArgumentException {
+	public void testSetNegativePrice() throws NumberOutOfRangeException,IllegalArgumentException {
 		Item i = new Item("burger", "Main-dish", "Standard", -1);
 	}
 
+	@Test(expected=NumberOutOfRangeException.class)
+	public void testSetBigPrice() throws NumberOutOfRangeException,IllegalArgumentException {
+		Item i = new Item("burger", "Main-dish", "Standard", Math.pow(10, 309));
+	}
 }

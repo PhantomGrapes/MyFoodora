@@ -17,7 +17,7 @@ public class TestUseData {
 	public Customer c;
 	public BasicPlan card;
 	
-	public void data1() throws NumberOutOfRangeException{
+	public void data1() throws Exception{
 		i1 = new Item("fromage", "Starter", "Standard", 4);
 		i2 = new Item("pizza", "Main-dish", "Standard", 10);
 		i3 = new Item("cake", "Dessert", "Standard", 5);
@@ -30,7 +30,9 @@ public class TestUseData {
 		m.addItem(i1);
 		m.addItem(i2);
 		m.addItem(i3);
+		m.setRestaurant(r);
 		r.setMenu(m);
+		meal.setMenu(m);
 		c = new Customer("Potter", "Harry", "HP123", new Coordinate(10, 10), "1234567");
 		card = new BasicPlan();
 		c.registerFidelityPlan(card);

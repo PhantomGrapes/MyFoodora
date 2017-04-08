@@ -1,0 +1,33 @@
+package item;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class MealTest {
+
+	@Test
+	public void testSetPrice() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetType() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetPreference() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCalculatePrice() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddToMealComposer(){
+		
+	}
+}

@@ -24,7 +24,7 @@ public class BasicPlanTest {
 	}
 
 	@Test
-	public void testVisitMealWithNormalPrice() throws NumberOutOfRangeException {
+	public void testVisitMealWithNormalPrice() throws Exception {
 		Meal meal = new Meal("BurgerKing", "fullMeal", "vegetarian");
 		Item i1 = new Item("fromage", "Starter", "standard", 4);
 		Item i2 = new Item("pizza", "Main-dish", "standard", 10);
@@ -37,7 +37,7 @@ public class BasicPlanTest {
 	}
 	
 	@Test(expected=NumberOutOfRangeException.class)
-	public void testVisitMealWithBigPrice() throws NumberOutOfRangeException {
+	public void testVisitMealWithBigPrice() throws Exception {
 		Meal meal = new Meal("BurgerKing", "fullMeal", "vegetarian");
 		Item i1 = new Item("fromage", "Starter", "standard", Math.pow(10, 308) );
 		Item i2 = new Item("pizza", "Main-dish", "standard", Math.pow(10, 308));
@@ -50,7 +50,7 @@ public class BasicPlanTest {
 	}
 
 	@Test
-	public void testCalculateFinalPriceALaCart() throws NumberOutOfRangeException {
+	public void testCalculateFinalPriceALaCart() throws Exception {
 		Item i1 = new Item("fromage", "Starter", "standard", 4);
 		Item i2 = new Item("pizza", "Main-dish", "standard", 10);
 		Item i3 = new Item("cake", "Dessert", "standard", 5);

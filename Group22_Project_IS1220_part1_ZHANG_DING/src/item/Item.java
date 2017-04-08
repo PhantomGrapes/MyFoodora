@@ -20,8 +20,6 @@ public class Item implements Offer{
 	
 	public Item(String name, String type, String preference, double price) throws NumberOutOfRangeException,IllegalArgumentException{
 		super();
-		if (price > Math.pow(10, 300))
-			throw new NumberOutOfRangeException();
 		setName(name);
 		setType(type);
 		setPreference(preference);
@@ -82,8 +80,10 @@ public class Item implements Offer{
 		return price;
 	}
 
-	public void setPrice(double price)throws IllegalArgumentException {
-		if(price >= 0)
+	public void setPrice(double price)throws IllegalArgumentException,NumberOutOfRangeException {
+		if (price > Math.pow(10, 300))
+			throw new NumberOutOfRangeException();
+		else if(price >= 0)
 			this.price = price;
 		else
 			throw new IllegalArgumentException("Invalid price");
