@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package command;
+
+/**
+ * @author Dingo
+ * For the currently logged on manager to add a restaurant of given name, 
+ * address (i.e. address should be a bi-dimensional co-ordinate), username 
+ * and password to the system.
+ */
+public class RegisterRestaurantCommand implements Command {
+	String name;
+	String address;
+	String username;
+	String password;
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public String execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#refuse()
+	 */
+	@Override
+	public String refuse() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

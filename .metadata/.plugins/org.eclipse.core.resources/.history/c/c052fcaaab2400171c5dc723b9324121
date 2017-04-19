@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package command;
+
+/**
+ * @author Dingo
+ *
+ */
+public interface Command {
+
+}

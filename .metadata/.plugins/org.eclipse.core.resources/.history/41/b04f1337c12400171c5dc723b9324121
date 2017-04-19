@@ -1,0 +1,209 @@
+package myFoodora;
+
+import java.util.ArrayList;
+
+import item.Order;
+import policy.DeliveryPolicy;
+import policy.FastestDeliveryPolicy;
+import policy.TargetProfitDeliveryCost;
+import policy.TargetProfitPolicy;
+import user.Courier;
+import user.Customer;
+import user.Manager;
+import user.Restaurant;
+import user.User;
+
+/**
+ * @author Shoulong
+ * Store all data of MyFoodora system, implement functions of top class. 
+ */
+
+public class MyFoodora {
+	
+	ArrayList<User> users;
+	ArrayList<Restaurant> restaurants;
+	ArrayList<Customer> customers;
+	ArrayList<Courier> couriers;
+	DeliveryPolicy deliveryPolicy;
+	TargetProfitPolicy targetProfitPolicy;
+	double serviceFee;
+	double markup;
+	double deliveryCost;
+	ArrayList<Order> orders;
+	
+	public MyFoodora() {
+		super();
+		this.users = new ArrayList<User>();
+		this.restaurants = new ArrayList<Restaurant>();
+		this.customers = new ArrayList<Customer>();
+		this.couriers = new ArrayList<Courier>();
+		this.deliveryPolicy = new FastestDeliveryPolicy();
+		this.targetProfitPolicy = new TargetProfitDeliveryCost();
+		this.serviceFee = 10;
+		this.markup = 0.1;
+		this.deliveryCost = 20;
+		this.orders = new ArrayList<Order>();
+	}
+	
+	
+	public MyFoodora(ArrayList<User> users, ArrayList<Restaurant> restaurants, ArrayList<Customer> customers,
+			ArrayList<Courier> couriers, DeliveryPolicy deliveryPolicy, TargetProfitPolicy targetProfitPolicy,
+			double serviceFee, double markup, double deliveryCost, ArrayList<Order> orders) {
+		super();
+		this.users = users;
+		this.restaurants = restaurants;
+		this.customers = customers;
+		this.couriers = couriers;
+		this.deliveryPolicy = deliveryPolicy;
+		this.targetProfitPolicy = targetProfitPolicy;
+		this.serviceFee = serviceFee;
+		this.markup = markup;
+		this.deliveryCost = deliveryCost;
+		this.orders = orders;
+	}
+
+// getter and setter
+	public ArrayList<User> getUsers() {
+		return users;
+	}
+	public void setUsers(ArrayList<User> users) {
+		this.users = users;
+	}
+	public ArrayList<Customer> getCustomers() {
+		return customers;
+	}
+	public void setCustomers(ArrayList<Customer> customers) {
+		this.customers = customers;
+	}
+	public DeliveryPolicy getDeliveryPolicy() {
+		return deliveryPolicy;
+	}
+	public void setDeliveryPolicy(DeliveryPolicy deliveryPolicy) {
+		this.deliveryPolicy = deliveryPolicy;
+	}
+	
+	public double getServiceFee() {
+		return serviceFee;
+	}
+	public void setServiceFee(double serviceFee) {
+		this.serviceFee = serviceFee;
+	}
+	public double getMarkup() {
+		return markup;
+	}
+	public void setMarkup(double markup) {
+		this.markup = markup;
+	}
+	public double getDeliveryCost() {
+		return deliveryCost;
+	}
+	public void setDeliveryCost(double deliveryCost) {
+		this.deliveryCost = deliveryCost;
+	}
+	
+	public ArrayList<Order> getOrders() {
+		return orders;
+	}
+	public void setOrders(ArrayList<Order> orders) {
+		this.orders = orders;
+	}
+	public TargetProfitPolicy getTargetProfitPolicy() {
+		return targetProfitPolicy;
+	}
+	public void setTargetProfitPolicy(TargetProfitPolicy targetProfitPolicy) {
+		this.targetProfitPolicy = targetProfitPolicy;
+	}
+	
+	public ArrayList<Restaurant> getRestaurants() {
+		return restaurants;
+	}
+	public void setRestaurants(ArrayList<Restaurant> restaurants) {
+		this.restaurants = restaurants;
+	}
+	public ArrayList<Courier> getCouriers() {
+		return couriers;
+	}
+	public void setCouriers(ArrayList<Courier> couriers) {
+		this.couriers = couriers;
+	}
+	
+// methods
+	public void addUser(User user) throws Exception{
+		if(users.contains(user)){
+			throw new Exception("User already exist!");
+		}
+		users.add(user);
+		if(user instanceof Customer)
+			customers.add((Customer) user);
+		if(user instanceof Restaurant)
+			restaurants.add((Restaurant) user);
+		if(user instanceof Courier)
+			couriers.add((Courier) user);
+	}
+	
+	public void removeUser(User user) throws Exception{
+		if (!users.contains(user))
+			throw new Exception("User doesn't exist!"); 
+		users.remove(user);
+		if(user instanceof Customer)
+			customers.remove((Customer) user);
+		if(user instanceof Restaurant)
+			restaurants.remove((Restaurant) user);
+		if(user instanceof Courier)
+			couriers.remove((Courier) user);
+	}
+	
+	public void sendEmailTo(Customer customer, String message){
+		if(customer.getEmail() == null || customer.getEmail() == ""){
+			System.out.println("Can't find email address");
+			return;
+		}
+		// send email
+		System.out.println("Already send email to "+customer.getName()+" "+customer.getSurname());
+	}
+	
+	public void sendSMSTo(Customer customer, String message){
+		if(customer.getPhoneNumber() == null || customer.getPhoneNumber() == ""){
+			System.out.println("Can't find phone number");
+			return;
+		}
+		// send SMS
+		System.out.println("Already send SMS to "+customer.getName()+" "+customer.getSurname());
+	}
+	
+	public void notifyUsers(String message){
+		for (Customer customer : customers) {
+			if(customer.isCanBeNotified()){
+				if(customer.isNotifiedByEmail()){
+					sendEmailTo(customer, message);
+				}
+				else
+					sendSMSTo(customer, message);
+			}
+		}
+	}
+	
+	public void activeUser(User user){
+		user.setActive(true);
+	}
+	
+	public void desactiveUser(User user){
+		user.setActive(false);
+	}
+	
+	public void allocateCourier(Order order){
+		ArrayList<Courier> cs = deliveryPolicy.sort(couriers, order.getCustomer());
+		if(cs == null || cs.size() == 0){
+			System.out.println("No courier on duty");
+			return;
+		}
+		// haven't get into Internet, so we assume that courier accepts every order
+		cs.get(0).acceptTheOrder(order);
+	}
+	
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

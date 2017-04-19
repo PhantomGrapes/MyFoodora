@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package command;
+
+/**
+ * @author Dingo
+ *
+ */
+public class RegisterRestaurantCommand implements Command {
+	String name;
+	String address;
+	String username;
+	String password;
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public String execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#refuse()
+	 */
+	@Override
+	public String refuse() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

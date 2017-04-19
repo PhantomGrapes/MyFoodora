@@ -128,7 +128,9 @@ public class MyFoodora {
 	}
 	
 // methods
-	public void addUser(User user){
+	public void addUser(User user) throws Exception{
+		if(users.contains(user))
+			throw new Exception("User already exist!");
 		users.add(user);
 		if(user instanceof Customer)
 			customers.add((Customer) user);
@@ -138,7 +140,9 @@ public class MyFoodora {
 			couriers.add((Courier) user);
 	}
 	
-	public void removeUser(User user){
+	public void removeUser(User user) throws Exception{
+		if (!users.contains(user))
+			throw new Exception("User doesn't exist!"); 
 		users.remove(user);
 		if(user instanceof Customer)
 			customers.remove((Customer) user);

@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package cLUI;
+
+import user.User;
+
+/**
+ * @author Dingo
+ *
+ */
+public class CLCore {
+	User currentUser;
+
+	
+	
+}

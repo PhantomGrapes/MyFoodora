@@ -18,8 +18,6 @@ public class User {
 	
 	boolean isActive;
 
-	MyFoodora myFoodora;
-
 //new add Constructors of User
 	public User(){}
 	
@@ -30,24 +28,8 @@ public class User {
 		
 		UniqueIDNumberGenerator generator = UniqueIDNumberGenerator.getInstance();
 		ID = generator.getNextIDNumber();
-	}
+	}	
 	
-// Register/Unregister/Login/Logout to system
-	public void registerToSystem(){
-		
-	}
-	
-	public void unregisterToSystem(){
-		
-	}
-	
-	public void loginToSystem(){
-		
-	}
-	
-	public void logourFromSystem(){
-		
-	}
 	
 // getter and setter
 	public String getName() {
@@ -65,4 +47,21 @@ public class User {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 }

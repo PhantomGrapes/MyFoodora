@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package command;
+
+import cLUI.CLCore;
+import myFoodora.MyFoodora;
+
+/**
+ * @author Dingo
+ * User can login with their username and password
+ */
+public class LoginCommand implements Command {
+
+	MyFoodora myFoodora;
+	CLCore cLCore;
+	String username;
+	String password;
+	
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#refuse()
+	 */
+	@Override
+	public void refuse() {
+		
+	}
+
+}

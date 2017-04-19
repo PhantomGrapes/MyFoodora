@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package command;
+
+import cLUI.CLCore;
+
+/**
+ * @author Dingo
+ *
+ */
+public class LogoutCommand implements Command {
+
+	CLCore cLCore;
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public String execute() {
+		if(cLCore.getCurrentUser() == null)
+			return refuse();
+		// Logout current account
+		cLCore.setCurrentUser(null);
+		return "Successfully logout.";
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#refuse()
+	 */
+	@Override
+	public String refuse() {
+		// User has no right to use this command
+		return "You haven't login.";
+	}
+
+}

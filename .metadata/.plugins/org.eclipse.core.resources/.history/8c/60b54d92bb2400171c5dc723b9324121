@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package command;
+
+import cLUI.CLCore;
+
+/**
+ * @author Dingo
+ *
+ */
+public class LogoutCommand implements Command {
+
+	CLCore cLCore;
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public String execute() {
+		
+		// Logout current account
+
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#refuse()
+	 */
+	@Override
+	public String refuse() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

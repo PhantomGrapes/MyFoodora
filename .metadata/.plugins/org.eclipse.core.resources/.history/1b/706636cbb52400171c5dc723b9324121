@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package command;
+
+/**
+ * @author Dingo
+ * Manage all command that CLUI need to invoke
+ */
+public class CLInvoker {
+
+}

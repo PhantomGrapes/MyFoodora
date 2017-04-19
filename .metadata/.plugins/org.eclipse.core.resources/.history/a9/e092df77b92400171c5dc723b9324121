@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package command;
+
+/**
+ * @author Dingo
+ * Command interface 
+ */
+public interface Command {
+	public void execute();
+	public void refuse();
+}

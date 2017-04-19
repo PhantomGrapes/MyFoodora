@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package command;
+
+import org.hamcrest.core.IsInstanceOf;
+
+import cLUI.CLCore;
+import user.Manager;
+
+/**
+ * @author Dingo
+ * For the currently logged on manager to add a restaurant of given name, 
+ * address (i.e. address should be a bi-dimensional co-ordinate), username 
+ * and password to the system.
+ */
+public class RegisterRestaurantCommand implements Command {
+	String name;
+	String address;
+	String username;
+	String password;
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public String execute() throws Exception{
+		if (!(CLCore.getCurrentUser() instanceof Manager))
+			return refuse();
+		// TODO Auto-generated method stub
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#refuse()
+	 */
+	@Override
+	public String refuse() {
+		// User has no right to use this command
+		return "You haven't right to use this command.";
+	}
+
+}

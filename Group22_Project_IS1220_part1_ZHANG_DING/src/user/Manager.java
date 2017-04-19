@@ -16,6 +16,7 @@ import myFoodora.MyFoodora;
 public class Manager extends User{
 
 	private String surname;
+	private MyFoodora myFoodora;
 	
 // new add Constructor of manager
 	public Manager(){}
@@ -104,5 +105,13 @@ public class Manager extends User{
 			}
 		});
 		return cs.get(0);
+	}
+	
+	public void registerToSystem(User user) throws Exception{
+		myFoodora.addUser(user);
+	}
+	
+	public void unRegisterToSystem(User user) throws Exception{
+		myFoodora.removeUser(user);
 	}
 }
