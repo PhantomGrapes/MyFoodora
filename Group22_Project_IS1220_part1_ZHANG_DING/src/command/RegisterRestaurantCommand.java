@@ -4,7 +4,7 @@
 package command;
 
 
-import cLUI.CLCore;
+import ui.UICore;
 import user.Manager;
 import user.Restaurant;
 import utilites.Coordinate;
@@ -21,26 +21,67 @@ public class RegisterRestaurantCommand implements Command {
 	Coordinate address;
 	String username;
 	String password;
+	
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Coordinate getAddress() {
+		return address;
+	}
+
+	public void setAddress(Coordinate address) {
+		this.address = address;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	/* (non-Javadoc)
 	 * @see command.Command#execute()
 	 */
 	@Override
-	public String execute() throws Exception{
-		if (!(CLCore.getCurrentUser() instanceof Manager))
-			return refuse();
-		Manager currentUser = (Manager) CLCore.getCurrentUser();
+	public CommandResult execute() throws Exception{
+		if (!(UICore.getCurrentUser() instanceof Manager))
+			return fail("You haven't right to use this command.");
+		Manager currentUser = (Manager) UICore.getCurrentUser();
+		// register to system
 		Restaurant r = new Restaurant(name, address, username, password);
 		currentUser.registerToSystem(r);
-		return "Successfully register to system.";
+		return success("Successfully register to system.");
 	}
-
-	/* (non-Javadoc)
-	 * @see command.Command#refuse()
-	 */
+	
 	@Override
-	public String refuse() {
-		// User has no right to use this command
-		return "You haven't right to use this command.";
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
 	}
 
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
 }

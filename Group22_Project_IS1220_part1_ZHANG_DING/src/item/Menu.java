@@ -65,33 +65,48 @@ public class Menu {
 	}
 
 // functions
-	public void addItem(Item item){
+	public void addItem(Item item)throws Exception{
 		if(!(items.contains(item))){
 			items.add(item);
 			item.setMenu(this);
 		}
+		else
+			throw new Exception("Dish already existed.");
 	}
 	
-	public void removeItem(Item item){
+	public void removeItem(Item item)throws Exception{
 		if(items.contains(item))
 			items.remove(item);
+		else
+			throw new Exception("Dish doesn't exist.");
 	}
 	
-	public void addMeal(Meal meal){
+	public void addMeal(Meal meal)throws Exception{
 		if(meal.getType()=="fullMeal"){
+			if(fullMeals.contains(meal))
+				throw new Exception("Meal already existed.");
 			fullMeals.add(meal);
 			meal.setMenu(this);
 		}
 		else{
+			if(halfMeals.contains(meal))
+				throw new Exception("Meal already existed.");
 			halfMeals.add(meal);
 			meal.setMenu(this);
 		}
 	}
 	
-	public void removeMeal(Meal meal){
-		if(meal.getType()=="fullMeal")
+	public void removeMeal(Meal meal)throws Exception{
+		if(meal.getType()=="fullMeal"){
+			if(!fullMeals.contains(meal))
+				throw new Exception("Meal doesn't exist.");
 			fullMeals.remove(meal);
+		}
 		else
+		{
+			if(!halfMeals.contains(meal))
+				throw new Exception("Meal doesn't existed.");
 			halfMeals.remove(meal);
+		}
 	}
 }

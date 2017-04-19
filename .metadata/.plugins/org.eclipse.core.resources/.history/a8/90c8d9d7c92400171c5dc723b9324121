@@ -1,0 +1,76 @@
+/**
+ * 
+ */
+package command;
+
+import item.Item;
+import ui.UICore;
+import user.Manager;
+import user.Restaurant;
+
+/**
+ * @author Dingo
+ * for the currently logged on restaurant to add a dish with given name, 
+ * given category (starter,main,dessert), food type (standard,vegetarian, 
+ * gluten-free) and price to the menu of a restaurant with given name 
+ * (this command can be executed by a restaurant-user only)
+ */
+public class AddDishRestaurantMenuCommand implements Command {
+	String dishName;
+	String dishCategory;
+	String foodCategory;
+	double unitPrice;
+	
+	
+	public String getDishName() {
+		return dishName;
+	}
+
+	public void setDishName(String dishName) {
+		this.dishName = dishName;
+	}
+
+	public String getDishCategory() {
+		return dishCategory;
+	}
+
+	public void setDishCategory(String dishCategory) {
+		this.dishCategory = dishCategory;
+	}
+
+	public String getFoodCategory() {
+		return foodCategory;
+	}
+
+	public void setFoodCategory(String foodCategory) {
+		this.foodCategory = foodCategory;
+	}
+
+	public double getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(double unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public CommandResult execute() throws Exception{
+		CommandResult result = new CommandResult();
+		if (!(UICore.getCurrentUser() instanceof Restaurant)){
+			result.setMessage("You haven't right to use this command.");
+			result.setResult(false);
+			return result;
+		}
+		Restaurant currentUser = (Restaurant) UICore.getCurrentUser();
+		// add new dish to menu
+		Item i = new Item(dishName, dishCategory, foodCategory, unitPrice);
+		currentUser.getMenu().addItem(i);
+		result.setMessage("Successfully add dish to menu.");
+		result.setResult(true);
+		return result;
+	}
+}

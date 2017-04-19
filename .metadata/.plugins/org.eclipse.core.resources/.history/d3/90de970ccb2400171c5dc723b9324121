@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+package command;
+
+import ui.UICore;
+import user.Restaurant;
+
+/**
+ * @author Dingo
+ * for the currently logged on restaurant to add a dish to a meal.
+ */
+public class AddDish2MealCommand implements Command {
+
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public CommandResult execute() {
+		if (!(UICore.getCurrentUser() instanceof Restaurant))
+			return fail("You haven't right to use this command.");
+		if(UICore.getCurrentMeal() == null){
+			return fail("Please create a meal.");
+		}
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
+
+}

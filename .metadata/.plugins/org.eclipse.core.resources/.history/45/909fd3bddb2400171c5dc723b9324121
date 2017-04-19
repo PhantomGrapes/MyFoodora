@@ -1,0 +1,72 @@
+package command;
+
+import java.util.Date;
+
+import item.Order;
+import myFoodora.MyFoodora;
+import ui.UICore;
+import user.Customer;
+
+/**
+ * @author Dingo
+ * for the currently logged on customer to finish an order at a given 
+ * date and pay it.
+ */
+public class EndOrderCommand implements Command {
+
+	String orderName;
+	Date date;
+	MyFoodora myFoodora;
+	
+	
+	public String getOrderName() {
+		return orderName;
+	}
+
+	public void setOrderName(String orderName) {
+		this.orderName = orderName;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	@Override
+	public CommandResult execute() throws Exception {
+		if (!(UICore.getCurrentUser() instanceof Customer))
+			return fail("You haven't right to use this command.");
+		Customer currentUser = (Customer) UICore.getCurrentUser();
+		Order o = null;
+		for (Order order : UICore.getCurrentOrders()) {
+			if(order.getName()==orderName)
+				o = order;
+		}
+		if(o==null)
+			return fail("Order doesn't exist.");
+		o.setDate(date);
+		currentUser.setCurrentOrder(o);
+		currentUser.finishOrder();
+		return success("Your order has finshed successfully.");
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
+
+}

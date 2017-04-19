@@ -26,6 +26,8 @@ public class Order {
 	
 	private Calendar calendar;
 	private Date date;
+	
+	String name;
 
 	public Order(){
 		this.customer = new Customer();
@@ -42,6 +44,12 @@ public class Order {
 		return customer;
 	}
 
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}

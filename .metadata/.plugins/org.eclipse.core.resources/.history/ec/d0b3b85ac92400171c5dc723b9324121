@@ -1,0 +1,78 @@
+
+package command;
+
+import myFoodora.MyFoodora;
+import ui.UICore;
+import user.User;
+
+/**
+ * @author Dingo
+ * User can login with their username and password
+ */
+public class LoginCommand implements Command {
+
+	MyFoodora myFoodora;
+	String username;
+	String password;
+	
+	
+	public MyFoodora getMyFoodora() {
+		return myFoodora;
+	}
+
+	public void setMyFoodora(MyFoodora myFoodora) {
+		this.myFoodora = myFoodora;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public CommandResult execute() throws Exception{
+		
+		
+		if (UICore.getCurrentUser() != null)
+			return fail("You have to logout your current account")
+		// If username and password is correct, login this user to current clui
+		for (User user : myFoodora.getUsers()) {
+			if(user.getUsername() == username && user.getPassword() == password){
+				UICore.setCurrentUser(user);
+				return success("Successfully login.")
+			}
+		}
+		fail("Login failed. Please check your username and password!");
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
+
+}

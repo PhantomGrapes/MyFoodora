@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package command;
+
+import cLUI.CLCore;
+import user.Customer;
+import user.Manager;
+import user.Restaurant;
+import utilites.Coordinate;
+
+/**
+ * @author Dingo
+ *
+ */
+public class RegisterCustomerCommand implements Command {
+
+	String firstName;
+	String lastName;
+	Coordinate address;
+	String username;
+	String password;
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public String execute() throws Exception{
+		if (!(CLCore.getCurrentUser() instanceof Manager))
+			return refuse();
+		Manager currentUser = (Manager) CLCore.getCurrentUser();
+		// register to system
+		Customer c = new Customer(firstName, lastName, username, address, _password)
+		currentUser.registerToSystem(c);
+		return "Successfully register to system.";
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#refuse()
+	 */
+	@Override
+	public String refuse() {
+		// User has no right to use this command
+		return "You haven't right to use this command.";
+	}
+
+}

@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package command;
+
+/**
+ * @author Dingo
+ * result of each command
+ */
+public class CommandResult {
+	boolean result;
+	String message;
+}

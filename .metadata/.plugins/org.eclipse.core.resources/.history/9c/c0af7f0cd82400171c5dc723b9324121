@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package command;
+
+import item.Meal;
+import myFoodora.MyFoodora;
+import ui.UICore;
+import user.Customer;
+import user.Restaurant;
+
+/**
+ * @author Dingo
+ * for the currently logged on customer to create an order from 
+ * a given restaurant.
+ */
+public class CreateOrderCommand implements Command {
+	String restaurantName;
+	String orderName;
+	MyFoodora myFoodora;
+	
+	@Override
+	public CommandResult execute() throws Exception {
+		if (!(UICore.getCurrentUser() instanceof Customer))
+			return fail("You haven't right to use this command.");
+		Customer currentUser = (Customer) UICore.getCurrentUser();
+		
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
+
+}

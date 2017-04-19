@@ -145,10 +145,14 @@ public class Customer extends User{
 			throw new Exception("There is not this meal in your order");
 	}
 	
-	public void finishOrder(){
+	public void calculateFinalPrice(){
 		currentOrder.setFinalPrice(fidelityPlan.calculateFinalPrice(currentOrder));
+	}
+	public void finishOrder(){
+		calculateFinalPrice();
 		// tell myFoodora to find a deliver courier
 		// pay for it
+		pay(currentOrder.getFinalPrice());
 		historyOrders.add(currentOrder);
 		// new add
 		currentOrder.getRestaurant().addOrder(currentOrder);
@@ -162,6 +166,10 @@ public class Customer extends User{
 		if(fidelityPlan instanceof PointPlan){
 			((PointPlan) fidelityPlan).setFidelityPoint(((PointPlan) fidelityPlan).getFidleityPoint() + (double)((double)currentOrder.getFinalPrice() *0.1));
 		}
+	}
+	
+	public void pay(double price){
+		
 	}
 	
 // History orders, print all orders made by this customer

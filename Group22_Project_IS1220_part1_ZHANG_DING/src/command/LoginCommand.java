@@ -1,8 +1,8 @@
 
 package command;
 
-import cLUI.CLCore;
 import myFoodora.MyFoodora;
+import ui.UICore;
 import user.User;
 
 /**
@@ -44,26 +44,34 @@ public class LoginCommand implements Command {
 	 * @see command.Command#execute()
 	 */
 	@Override
-	public String execute() throws Exception{
-		if (CLCore.getCurrentUser() != null)
-			return refuse();
+	public CommandResult execute() throws Exception{
+		
+		
+		if (UICore.getCurrentUser() != null)
+			return fail("You have to logout your current account");
 		// If username and password is correct, login this user to current clui
 		for (User user : myFoodora.getUsers()) {
 			if(user.getUsername() == username && user.getPassword() == password){
-				CLCore.setCurrentUser(user);
-				return "Successfully login.";
+				UICore.setCurrentUser(user);
+				return success("Successfully login.");
 			}
 		}
-		return "Login failed. Please check your username and password!";
+		return fail("Login failed. Please check your username and password!");
 	}
 
-	/* (non-Javadoc)
-	 * @see command.Command#refuse()
-	 */
 	@Override
-	public String refuse() {
-		// User has no right to use this command
-		return "Please logout your current account to login.";
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
 	}
 
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
 }

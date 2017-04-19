@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+package command;
+
+/**
+ * @author Dingo
+ *
+ */
+public class SaveMealCommand implements Command {
+	String mealName;
+	
+	public String getMealName() {
+		return mealName;
+	}
+
+	public void setMealName(String mealName) {
+		this.mealName = mealName;
+	}
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public CommandResult execute() {
+		
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
+}

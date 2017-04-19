@@ -3,7 +3,7 @@
  */
 package command;
 
-import cLUI.CLCore;
+import ui.UICore;
 
 /**
  * @author Dingo
@@ -15,21 +15,27 @@ public class LogoutCommand implements Command {
 	 * @see command.Command#execute()
 	 */
 	@Override
-	public String execute() throws Exception{
-		if(CLCore.getCurrentUser() == null)
-			return refuse();
+	public CommandResult execute() throws Exception{
+		if(UICore.getCurrentUser() == null)
+			return fail("You haven't login.");
 		// Logout current account
-		CLCore.setCurrentUser(null);
-		return "Successfully logout.";
+		UICore.clear();
+		return success("Successfully logout.");
 	}
 
-	/* (non-Javadoc)
-	 * @see command.Command#refuse()
-	 */
 	@Override
-	public String refuse() {
-		// User has no right to use this command
-		return "You haven't login.";
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
 	}
 
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
 }

@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package command;
+
+import cLUI.CLCore;
+import user.Courier;
+import user.Manager;
+import utilites.Coordinate;
+
+/**
+ * @author Dingo
+ * for the currently logged on manager to add a courier to the system (by default each
+newly registered courier is on-duty).
+ */
+public class RegisterCourierCommand implements Command {
+	String firstName;
+	String lastName;
+	Coordinate position;
+	String username;
+	String password;
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public String execute() throws Exception{
+		if (!(CLCore.getCurrentUser() instanceof Manager))
+			return refuse();
+		Manager currentUser = (Manager) CLCore.getCurrentUser();
+		// register to system
+		Courier c = new Courier(firstName, lastName, username, position, password);
+		currentUser.registerToSystem(c);
+		return "Successfully register to system.";
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#refuse()
+	 */
+	@Override
+	public String refuse() {
+		// User has no right to use this command
+		return "You haven't right to use this command.";
+	}
+}

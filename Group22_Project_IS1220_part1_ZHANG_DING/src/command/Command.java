@@ -9,6 +9,7 @@ package command;
  * Aim to design each specific command
  */
 public interface Command {
-	public String execute() throws Exception;
-	public String refuse();
+	public CommandResult execute() throws Exception;
+	public CommandResult success(String message);
+	public CommandResult fail(String message);
 }

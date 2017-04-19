@@ -1,12 +1,14 @@
 package user;
 
 import java.util.Date;
+import java.security.Policy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 import item.Order;
 import myFoodora.MyFoodora;
+import policy.DeliveryPolicy;
 
 /**
  * @author Shoulong
@@ -113,5 +115,9 @@ public class Manager extends User{
 	
 	public void unRegisterToSystem(User user) throws Exception{
 		myFoodora.removeUser(user);
+	}
+	
+	public void setDeliveryPolicy(DeliveryPolicy policy){
+		myFoodora.setDeliveryPolicy(policy);
 	}
 }

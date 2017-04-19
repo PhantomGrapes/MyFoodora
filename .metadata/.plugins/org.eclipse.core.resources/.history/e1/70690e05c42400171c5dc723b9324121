@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package cLUI;
+
+import item.Meal;
+import user.User;
+
+/**
+ * @author Dingo
+ *
+ */
+public class CLCore {
+	static User currentUser;
+	static Meal currentMeal;
+
+	public static Meal getCurrentMeal() {
+		return currentMeal;
+	}
+
+	public static void setCurrentMeal(Meal currentMeal) {
+		CLCore.currentMeal = currentMeal;
+	}
+
+	public static  User getCurrentUser() {
+		return currentUser;
+	}
+
+	public static void setCurrentUser(User currentUser) {
+		CLCore.currentUser = currentUser;
+	}
+	
+	
+}

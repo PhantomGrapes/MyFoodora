@@ -1,0 +1,112 @@
+package item;
+
+import java.util.ArrayList;
+
+import user.Restaurant;
+
+
+/**
+ * @author Dingo
+ * The menu of a restaurant
+ */
+public class Menu {
+
+	ArrayList<Item> items;
+	ArrayList<Meal> fullMeals;
+	ArrayList<Meal> halfMeals;
+	private Restaurant restaurant;
+
+// getter and setter
+	public ArrayList<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(ArrayList<Item> items) {
+		this.items = items;
+	}
+
+	public ArrayList<Meal> getFullMeals() {
+		return fullMeals;
+	}
+
+	public void setFullMeals(ArrayList<Meal> fullMeals) {
+		this.fullMeals = fullMeals;
+	}
+
+	public ArrayList<Meal> getHalfMeals() {
+		return halfMeals;
+	}
+
+	public void setHalfMeals(ArrayList<Meal> halfMeals) {
+		this.halfMeals = halfMeals;
+	}
+	
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
+
+// Constructor
+	public Menu() {
+		items = new ArrayList<Item>();
+		fullMeals = new ArrayList<Meal>();
+		halfMeals = new ArrayList<Meal>();
+		restaurant = new Restaurant();
+	}
+	
+	public Menu(Restaurant _restaurant){
+		items = new ArrayList<Item>();
+		fullMeals = new ArrayList<Meal>();
+		halfMeals = new ArrayList<Meal>();
+		restaurant = _restaurant;
+	}
+
+// functions
+	public void addItem(Item item)throws Exception{
+		if(!(items.contains(item))){
+			items.add(item);
+			item.setMenu(this);
+		}
+		else
+			throw new Exception("Dish already existed.");
+	}
+	
+	public void removeItem(Item item)throws Exception{
+		if(items.contains(item))
+			items.remove(item);
+		else
+			throw new Exception("Dish doesn't exist.");
+	}
+	
+	public void addMeal(Meal meal)throws Exception{
+		if(meal.getType()=="fullMeal"){
+			if(fullMeals.contains(meal))
+				throw new Exception("Meal already existed.");
+			fullMeals.add(meal);
+			meal.setMenu(this);
+		}
+		else{
+			if(halfMeals.contains(meal))
+				throw new Exception("Meal already existed.");
+			halfMeals.add(meal);
+			meal.setMenu(this);
+		}
+	}
+	
+	public void removeMeal(Meal meal)throws Exception{
+		if(meal.getType()=="fullMeal"){
+			if(!fullMeals.contains(meal))
+				throw new Exception("Meal doesn't exist.");
+			fullMeals.remove(meal);
+		}
+		else
+		{
+			if(fullMeals.contains(meal))
+				throw new Exception("Meal already existed.");
+			halfMeals.remove(meal);
+		}
+	}
+}

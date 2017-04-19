@@ -1,0 +1,53 @@
+/**
+ * 
+ */
+package command;
+
+import item.Order;
+import ui.UICore;
+import user.Customer;
+
+/**
+ * @author Dingo
+ *
+ */
+public class FindDelivererCommand implements Command {
+
+	String orderName;
+	@Override
+	public CommandResult execute() throws Exception {
+		if (!(UICore.getCurrentUser() instanceof Customer))
+			return fail("You haven't right to use this command.");
+		Customer currentUser = (Customer) UICore.getCurrentUser();
+		Order o = null;
+		for (Order order : UICore.getCurrentOrders()) {
+			if(order.getName()==orderName)
+				o = order;
+		}
+		if(o==null)
+			return fail("Order doesn't exist.");
+		o.setDate(date);
+		currentUser.setCurrentOrder(o);
+		currentUser.calculateFinalPrice();
+		myFoodora.allocateCourier(o);
+		currentUser.finishOrder();
+		return success("Your order has finshed successfully.");
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
+
+}

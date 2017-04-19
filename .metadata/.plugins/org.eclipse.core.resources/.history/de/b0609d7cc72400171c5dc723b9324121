@@ -1,0 +1,41 @@
+/**
+ * 
+ */
+package command;
+
+import ui.UICore;
+
+/**
+ * @author Dingo
+ * To allow the currently logged on user to log off
+ */
+public class LogoutCommand implements Command {
+
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public CommandResult execute() throws Exception{
+		CommandResult result = new CommandResult();
+		if(UICore.getCurrentUser() == null){
+			result.setMessage("You haven't login.");
+			result.setResult(false);
+			return result;
+		}
+		// Logout current account
+		UICore.clear();
+		result.setMessage("Successfully logout.");
+		result.setResult(true);
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#refuse()
+	 */
+	@Override
+	public String refuse() {
+		// User has no right to use this command
+		return ;
+	}
+
+}

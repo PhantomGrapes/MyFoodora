@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+package command;
+
+/**
+ * @author Dingo
+ *
+ */
+public class AddDish2MealCommand implements Command {
+
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public CommandResult execute() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

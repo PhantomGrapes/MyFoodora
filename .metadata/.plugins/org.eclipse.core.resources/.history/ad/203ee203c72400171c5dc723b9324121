@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package command;
+
+/**
+ * @author Dingo
+ * Command interface
+ * Aim to design each specific command
+ */
+public interface Command {
+	public boolean execute() throws Exception;
+	public void refuse(String reason) throws Exception;
+}

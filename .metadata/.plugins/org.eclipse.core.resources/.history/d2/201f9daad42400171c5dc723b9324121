@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package command;
+
+/**
+ * @author Dingo
+ *
+ */
+public class SaveMealCommand implements Command {
+
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
+}

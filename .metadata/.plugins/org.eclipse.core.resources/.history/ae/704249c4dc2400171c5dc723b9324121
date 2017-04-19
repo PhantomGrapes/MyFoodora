@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package command;
+
+import ui.UICore;
+import user.Courier;
+
+/**
+ * @author Dingo
+ *
+ */
+public class OffDutyCommand implements Command {
+String username;
+	
+	@Override
+	public CommandResult execute() throws Exception{
+		if (!(UICore.getCurrentUser() instanceof Courier))
+			return fail("You haven't right to use this command.");
+		Courier currentUser = (Courier) UICore.getCurrentUser();
+		currentUser.setOnOrOffDuty(true);
+		return success("Successfully set on duty");
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
+}

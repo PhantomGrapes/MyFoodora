@@ -1,0 +1,42 @@
+package command;
+
+import item.Item;
+import item.Meal;
+import item.Order;
+import ui.UICore;
+import user.Customer;
+
+public class EndOrderCommand implements Command {
+
+	String orderName;
+	String date;
+	
+	@Override
+	public CommandResult execute() throws Exception {
+		if (!(UICore.getCurrentUser() instanceof Customer))
+			return fail("You haven't right to use this command.");
+		Order o = null;
+		for (Order order : UICore.getCurrentOrders()) {
+			if(order.getName()==orderName)
+				o = order;
+		}
+		
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
+
+}

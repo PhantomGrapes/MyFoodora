@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package command;
+
+import item.Item;
+import item.Meal;
+import ui.UICore;
+import user.Restaurant;
+
+/**
+ * @author Dingo
+ * for the currently logged on restaurant to create 
+ * a meal with a given name.
+ */
+public class CreateMealCommand implements Command {
+	String mealName;
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public CommandResult execute() throws Exception{
+		CommandResult result = new CommandResult();
+		if (!(UICore.getCurrentUser() instanceof Restaurant)){
+			result.setMessage("You haven't right to use this command.");
+			result.setResult(false);
+			return result;
+		}
+		Meal meal = new Meal(mealName, "", "");
+		UICore.setCurrentMeal(meal);
+	}
+}

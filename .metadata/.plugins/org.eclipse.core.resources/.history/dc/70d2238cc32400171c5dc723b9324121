@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package command;
+
+import cLUI.CLCore;
+import item.Item;
+import user.Restaurant;
+
+/**
+ * @author Dingo
+ * for the currently logged on restaurant to add a dish with given name, 
+ * given category (starter,main,dessert), food type (standard,vegetarian, 
+ * gluten-free) and price to the menu of a restaurant with given name 
+ * (this command can be executed by a restaurant-user only)
+ */
+public class AddDishRestaurantMenuCommand implements Command {
+	String dishName;
+	String dishCategory;
+	String foodCategory;
+	double unitPrice;
+	/* (non-Javadoc)
+	 * @see command.Command#execute()
+	 */
+	@Override
+	public String execute() throws Exception{
+		if (!(CLCore.getCurrentUser() instanceof Restaurant))
+			return refuse();
+		Restaurant currentUser = (Restaurant) CLCore.getCurrentUser();
+		// add new dish to menu
+		Item i = new Item(dishName, dishCategory, foodCategory, unitPrice);
+		currentUser.getMenu().addItem(i);
+		return "Successfully add dish to menu.";
+	}
+
+	/* (non-Javadoc)
+	 * @see command.Command#refuse()
+	 */
+	@Override
+	public String refuse() {
+		// User has no right to use this command
+		return "You haven't right to use this command.";
+	}
+
+}

@@ -3,28 +3,85 @@
  */
 package command;
 
+import item.Meal;
+import item.Order;
+import myFoodora.MyFoodora;
+import ui.UICore;
+import user.Customer;
+import user.Restaurant;
+
 /**
  * @author Dingo
- *
+ * for the currently logged on customer to create an order from 
+ * a given restaurant.
  */
 public class CreateOrderCommand implements Command {
-
-	/* (non-Javadoc)
-	 * @see command.Command#execute()
-	 */
-	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-
+	String restaurantName;
+	String orderName;
+	MyFoodora myFoodora;
+	
+	
+	public String getRestaurantName() {
+		return restaurantName;
 	}
 
-	/* (non-Javadoc)
-	 * @see command.Command#refuse()
-	 */
-	@Override
-	public void refuse() {
-		// TODO Auto-generated method stub
+	public void setRestaurantName(String restaurantName) {
+		this.restaurantName = restaurantName;
+	}
 
+	public String getOrderName() {
+		return orderName;
+	}
+
+	public void setOrderName(String orderName) {
+		this.orderName = orderName;
+	}
+
+	public MyFoodora getMyFoodora() {
+		return myFoodora;
+	}
+
+	public void setMyFoodora(MyFoodora myFoodora) {
+		this.myFoodora = myFoodora;
+	}
+
+	@Override
+	public CommandResult execute() throws Exception {
+		if (!(UICore.getCurrentUser() instanceof Customer))
+			return fail("You haven't right to use this command.");
+		Customer currentUser = (Customer) UICore.getCurrentUser();
+		Restaurant r = null;
+		for (Restaurant res : myFoodora.getRestaurants()) {
+			if(res.getName()==restaurantName)
+				r = res;
+		}
+		if(r == null)
+			return fail("Restaurant doesn't exist.");
+		for (Order order : UICore.getCurrentOrders()) {
+			if(order.getName()==orderName)
+				return fail("Order already existed.");
+		}
+		Order o = new Order();
+		o.setCustomer(currentUser);
+		o.setRestaurant(r);
+		UICore.getCurrentOrders().add(o);
+		return success("Successfully create order");
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
 	}
 
 }
