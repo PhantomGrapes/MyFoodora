@@ -1,0 +1,129 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import java.util.Calendar;
+import java.util.Date;
+
+import org.junit.Test;
+
+import item.Order;
+import myFoodora.MyFoodora;
+import user.Courier;
+import user.Manager;
+import user.Restaurant;
+
+public class ManagerTest {
+	
+	MyFoodora myFoodora = new MyFoodora();
+	Manager manager = new Manager("Happy","Newyear","QNMLGB","1234567", myFoodora);
+	Calendar cal = Calendar.getInstance();
+	Date date;
+
+	@Test
+	public void testGetTotalIncome() {
+		myFoodora.addUser(manager);
+		date = (Date) cal.getTime();
+		
+		Order order1 = new Order();
+		Order order2 = new Order();
+		
+		order1.setFinalPrice(10);
+		order2.setFinalPrice(12);
+		
+		myFoodora.getOrders().add(order1);
+		myFoodora.getOrders().add(order2);
+		
+		assertTrue(manager.getAverageIncome(order1.getDate(), order2.getDate())== -17.8);	
+	}
+
+	@Test
+	public void testGetAverageIncome() {
+		date = (Date) cal.getTime();
+		
+		Order order1 = new Order();
+		Order order2 = new Order();
+		
+		order1.setFinalPrice(10);
+		order2.setFinalPrice(12);
+		
+		myFoodora.getOrders().add(order1);
+		myFoodora.getOrders().add(order2);
+
+		assertTrue(manager.getAverageIncome(order1.getDate(), order2.getDate())== -8.9);	
+	}
+
+	@Test
+	public void testGetMostSellingRestaurant() {
+		Restaurant res1 = new Restaurant();
+		Restaurant res2 = new Restaurant();
+		
+		myFoodora.addUser(manager);
+		myFoodora.addUser(res1);
+		myFoodora.addUser(res2);
+		
+		Order o1 = new Order();
+		Order o2 = new Order();
+		
+		res1.getOrders().add(o1);
+		res2.getOrders().add(o1);
+		res2.getOrders().add(o2);
+		
+		assertTrue(manager.getMostSellingRestaurant() == res2);
+	}
+
+	@Test
+	public void testGetLeastSellingRestaurant() {
+		Restaurant res1 = new Restaurant();
+		Restaurant res2 = new Restaurant();
+		
+		myFoodora.addUser(res1);
+		myFoodora.addUser(res2);
+		
+		Order o1 = new Order();
+		Order o2 = new Order();
+		
+		res1.getOrders().add(o1);
+		res2.getOrders().add(o1);
+		res2.getOrders().add(o2);
+		
+		assertTrue(manager.getLeastSellingRestaurant() == res1);
+	}
+
+	@Test
+	public void testGetMostActiveCourier() {
+		Courier courier1 = new Courier();
+		Courier courier2 = new Courier();
+		
+		myFoodora.addUser(courier1);
+		myFoodora.addUser(courier2);
+		
+		Order o1 = new Order();
+		Order o2 = new Order();
+		
+		courier1.getDeliveredOrders().add(o1);
+		courier2.getDeliveredOrders().add(o1);
+		courier2.getDeliveredOrders().add(o2);
+		
+		assertTrue(manager.getMostActiveCourier() == courier2);
+	}
+
+	@Test
+	public void testGetLeastActiveCourier() {
+		Courier courier1 = new Courier();
+		Courier courier2 = new Courier();
+		
+		myFoodora.addUser(courier1);
+		myFoodora.addUser(courier2);
+		
+		Order o1 = new Order();
+		Order o2 = new Order();
+		
+		courier1.getDeliveredOrders().add(o1);
+		courier2.getDeliveredOrders().add(o1);
+		courier2.getDeliveredOrders().add(o2);
+		
+		assertTrue(manager.getLeastActiveCourier() == courier1);
+	}
+
+}
