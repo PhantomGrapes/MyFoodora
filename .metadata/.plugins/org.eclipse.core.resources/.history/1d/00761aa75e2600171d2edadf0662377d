@@ -1,0 +1,164 @@
+package ui;
+
+import command.AddDishRestaurantMenuCommand;
+import command.CommandResult;
+import command.CreateMealCommand;
+import command.LoginCommand;
+import command.LogoutCommand;
+import command.RegisterCourierCommand;
+import command.RegisterCustomerCommand;
+import command.RegisterRestaurantCommand;
+import myFoodora.MyFoodora;
+import utilites.Coordinate;
+
+/**
+ * @author Dingo
+ * Receive parameter and execute the correspond command
+ */
+public class CLInvoker {
+	MyFoodora myFoodora;
+	
+	public CLInvoker(MyFoodora myFoodora) {
+		super();
+		this.myFoodora = myFoodora;
+	}
+
+	public CommandResult invalidInput(){
+		CommandResult result = new CommandResult();
+		result.setResult(false);
+		result.setMessage("Parameter input format is invalid");
+		return result;
+	}
+	public CommandResult login(String[] args) throws Exception{
+		if(args.length != 3)
+			return invalidInput();
+		LoginCommand c = new LoginCommand();
+		c.setMyFoodora(myFoodora);
+		c.setUsername(args[1]);
+		c.setPassword(args[2]);
+		return c.execute();
+	}
+	
+	public CommandResult logout(String[] args) throws Exception{
+		if(args.length != 1)
+			return invalidInput();
+		LogoutCommand c = new LogoutCommand();
+		return c.execute();
+		
+	}
+	public CommandResult registerRestaurant(String[] args) throws Exception{
+		if(args.length != 5)
+			return invalidInput();
+		RegisterRestaurantCommand c= new RegisterRestaurantCommand();
+		c.setName(args[1]);
+		c.setAddress(Coordinate.stringToCoordinate(args[2]));
+		c.setUsername(args[3]);
+		c.setPassword(args[4]);
+		return c.execute();
+	}
+	public CommandResult registerCustomer(String[] args) throws Exception{
+		if(args.length != 6)
+			return invalidInput();
+		RegisterCustomerCommand c= new RegisterCustomerCommand();
+		c.setFirstName(args[1]);
+		c.setLastName(args[2]);
+		c.setUsername(args[3]);
+		c.setAddress(Coordinate.stringToCoordinate(args[4]));
+		c.setPassword(args[5]);
+		return c.execute();
+	}
+	public CommandResult registerCourier(String[] args) throws Exception{
+		if(args.length != 6)
+			return invalidInput();
+		RegisterCourierCommand c= new RegisterCourierCommand();
+		c.setFirstName(args[1]);
+		c.setLastName(args[2]);
+		c.setUsername(args[3]);
+		c.setPosition(Coordinate.stringToCoordinate(args[4]));
+		c.setPassword(args[5]);
+		return c.execute();
+	}
+	public CommandResult addDishRestauarantMenu(String[] args) throws Exception{
+		if(args.length != 5)
+			return invalidInput();
+		AddDishRestaurantMenuCommand c = new AddDishRestaurantMenuCommand();
+		c.setDishName(args[1]);
+		c.setDishCategory(args[2]);
+		c.setFoodCategory(args[3]);
+		c.setUnitPrice(Double.parseDouble(args[4]));
+		return c.execute();
+	}
+	public CommandResult createMeal(String[] args){
+		if(args.length != 2)
+			return invalidInput();
+		CreateMealCommand c = new CreateMealCommand();
+		c.setMealName(args[1]);
+		return c.execute();
+	}
+	public CommandResult addDish2Meal(String[] args){
+		
+	}
+	public CommandResult showMeal(String[] args){
+		
+	}
+	public CommandResult saveMeal(String[] args){
+		
+	}
+	public CommandResult setSpecialOffer(String[] args){
+		
+	}
+	public CommandResult removeFromSpecialOffer(String[] args){
+		
+	}
+	public CommandResult createOrder(String[] args){
+		
+	}
+	public CommandResult addItem2Order(String[] args){
+		
+	}
+	public CommandResult endOrder(String[] args){
+		
+	}
+	public CommandResult onDuty(String[] args){
+		
+	}
+	public CommandResult offDuty(String[] args){
+		
+	}
+	public CommandResult findDeliverer(String[] args){
+		
+	}
+	public CommandResult setDeliveryPolicy(String[] args){
+		
+	}
+	public CommandResult setProfitPolicy(String[] args){
+		
+	}
+	public CommandResult associateCard(String[] args){
+		
+	}
+	public CommandResult showCourierDeliveries(String[] args){
+		
+	}
+	public CommandResult showRestaurantTop(String[] args){
+		
+	}
+	public CommandResult showCustomers(String[] args){
+		
+	}
+	public CommandResult showMenuItem(String[] args){
+		
+	}
+	public CommandResult showTotalProfit(String[] args){
+		
+	}
+	public CommandResult showTotalProfit(String[] args){
+		
+	}
+	public CommandResult runTest(String[] args){
+		
+	}
+	public CommandResult help(String[] args){
+		
+	}
+}

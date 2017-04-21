@@ -1,0 +1,39 @@
+package utilites;
+
+/**
+ * @author Shoulong
+ * Address type data class.
+ */
+
+public class Coordinate {
+	 
+	private int x;
+	private int y;
+	
+	public Coordinate(int _x, int _y){
+		this.x = _x;
+		this.y = _y;
+	}
+	
+	public int getX(){
+		return this.x;
+	}
+	
+	public int getY(){
+		return this.y;
+	}
+	
+	// has to be a double class instead of primitive type
+	public static Double distanceBetweenTwoLocation(Coordinate c1, Coordinate c2){
+		Double distance;
+		distance = Math.sqrt((c1.getX()-c2.getX())*(c1.getX()-c2.getX()) + (c1.getY()-c2.getY())*(c1.getY()-c2.getY()));
+		return distance;
+	}
+	
+	public static Coordinate stringToCoordinate(String s){
+		if(!s.startsWith("(") || !s.endsWith(")"))
+			return null;
+		
+	}
+}
+

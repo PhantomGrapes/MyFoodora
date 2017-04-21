@@ -29,6 +29,23 @@ public class CreateMealCommand implements Command {
 		this.mealName = mealName;
 	}
 
+	
+	public String getMealCategory() {
+		return mealCategory;
+	}
+
+	public void setMealCategory(String mealCategory) {
+		this.mealCategory = mealCategory;
+	}
+
+	public String getFoodType() {
+		return foodType;
+	}
+
+	public void setFoodType(String foodType) {
+		this.foodType = foodType;
+	}
+
 	/* (non-Javadoc)
 	 * @see command.Command#execute()
 	 */

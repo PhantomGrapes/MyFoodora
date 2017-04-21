@@ -1,0 +1,233 @@
+package ui;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import command.AddDish2MealCommand;
+import command.AddDishRestaurantMenuCommand;
+import command.AddItem2OrderCommand;
+import command.CommandResult;
+import command.CreateMealCommand;
+import command.CreateOrderCommand;
+import command.EndOrderCommand;
+import command.LoginCommand;
+import command.LogoutCommand;
+import command.RegisterCourierCommand;
+import command.RegisterCustomerCommand;
+import command.RegisterRestaurantCommand;
+import command.RemoveFromSpecialOfferCommand;
+import command.SaveMealCommand;
+import command.SetSpecialOfferCommand;
+import command.ShowMealCommand;
+import myFoodora.MyFoodora;
+import utilites.Coordinate;
+
+/**
+ * @author Dingo
+ * Receive parameter and execute the correspond command
+ */
+public class CLInvoker {
+	MyFoodora myFoodora;
+	
+	public CLInvoker(MyFoodora myFoodora) {
+		super();
+		this.myFoodora = myFoodora;
+	}
+
+	public CommandResult invalidInput(){
+		CommandResult result = new CommandResult();
+		result.setResult(false);
+		result.setMessage("Parameter input format is invalid");
+		return result;
+	}
+	public CommandResult login(String[] args) throws Exception{
+		if(args.length != 2)
+			return invalidInput();
+		LoginCommand c = new LoginCommand();
+		c.setMyFoodora(myFoodora);
+		c.setUsername(args[0]);
+		c.setPassword(args[1]);
+		return c.execute();
+	}
+	
+	public CommandResult logout(String[] args) throws Exception{
+		if(args.length != 0)
+			return invalidInput();
+		LogoutCommand c = new LogoutCommand();
+		return c.execute();
+		
+	}
+	public CommandResult registerRestaurant(String[] args) throws Exception{
+		if(args.length != 4)
+			return invalidInput();
+		RegisterRestaurantCommand c= new RegisterRestaurantCommand();
+		c.setName(args[0]);
+		c.setAddress(Coordinate.stringToCoordinate(args[1]));
+		c.setUsername(args[2]);
+		c.setPassword(args[3]);
+		return c.execute();
+	}
+	public CommandResult registerCustomer(String[] args) throws Exception{
+		if(args.length != 5)
+			return invalidInput();
+		RegisterCustomerCommand c= new RegisterCustomerCommand();
+		c.setFirstName(args[0]);
+		c.setLastName(args[1]);
+		c.setUsername(args[2]);
+		c.setAddress(Coordinate.stringToCoordinate(args[3]));
+		c.setPassword(args[4]);
+		return c.execute();
+	}
+	public CommandResult registerCourier(String[] args) throws Exception{
+		if(args.length != 5)
+			return invalidInput();
+		RegisterCourierCommand c= new RegisterCourierCommand();
+		c.setFirstName(args[0]);
+		c.setLastName(args[1]);
+		c.setUsername(args[2]);
+		c.setPosition(Coordinate.stringToCoordinate(args[3]));
+		c.setPassword(args[4]);
+		return c.execute();
+	}
+	public CommandResult addDishRestauarantMenu(String[] args) throws Exception{
+		if(args.length != 4)
+			return invalidInput();
+		AddDishRestaurantMenuCommand c = new AddDishRestaurantMenuCommand();
+		c.setDishName(args[0]);
+		c.setDishCategory(args[1]);
+		c.setFoodCategory(args[2]);
+		c.setUnitPrice(Double.parseDouble(args[3]));
+		return c.execute();
+	}
+	public CommandResult createMeal(String[] args) throws Exception{
+		if(args.length != 3)
+			return invalidInput();
+		CreateMealCommand c = new CreateMealCommand();
+		c.setMealName(args[0]);
+		c.setMealCategory(args[1]);
+		c.setFoodType(args[2]);
+		return c.execute();
+	}
+	public CommandResult addDish2Meal(String[] args) throws Exception{
+		if(args.length != 2)
+			return invalidInput();
+		AddDish2MealCommand c = new AddDish2MealCommand();
+		c.setDishName(args[0]);
+		c.setMealName(args[1]);
+		return c.execute();
+	}
+	public CommandResult showMeal(String[] args){
+		if(args.length != 1)
+			return invalidInput();
+		ShowMealCommand c = new ShowMealCommand();
+		c.setMealName(args[0]);
+		return c.execute();
+	}
+	public CommandResult saveMeal(String[] args) throws Exception{
+		if(args.length != 1)
+			return invalidInput();
+		SaveMealCommand c = new SaveMealCommand();
+		c.setMealName(args[0]);
+		return c.execute();
+		
+	}
+	public CommandResult setSpecialOffer(String[] args) throws Exception{
+		if(args.length != 1)
+			return invalidInput();
+		SetSpecialOfferCommand c = new SetSpecialOfferCommand();
+		c.setMealName(args[0]);
+		return c.execute();
+	}
+	public CommandResult removeFromSpecialOffer(String[] args) throws Exception{
+		if(args.length != 1)
+			return invalidInput();
+		RemoveFromSpecialOfferCommand c = new RemoveFromSpecialOfferCommand();
+		c.setMealName(args[0]);
+		return c.execute();
+	}
+	public CommandResult createOrder(String[] args) throws Exception{
+		if(args.length != 2)
+			return invalidInput();
+		CreateOrderCommand c = new CreateOrderCommand();
+		c.setRestaurantName(args[0]);
+		c.setOrderName(args[1]);
+		c.setMyFoodora(myFoodora);
+		return c.execute();
+	}
+	public CommandResult addItem2Order(String[] args) throws Exception{
+		if(args.length != 2)
+			return invalidInput();
+		AddItem2OrderCommand c = new AddItem2OrderCommand();
+		c.setOrderName(args[0]);
+		c.setItemName(args[2]);
+		return c.execute();
+	}
+	public CommandResult endOrder(String[] args) throws Exception{
+		if(args.length != 3)
+			return invalidInput();
+		Date d = (new SimpleDateFormat("yyyy-MM-dd HH:mm")).parse(args[2]);
+		EndOrderCommand c = new EndOrderCommand();
+		c.setOrderName(args[1]);
+		c.setDate(d);
+		c.setMyFoodora(myFoodora);
+		return c.execute();
+	}
+	public CommandResult onDuty(String[] args){
+		if(args.length != 2)
+			return invalidInput();
+		
+	}
+	public CommandResult offDuty(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult findDeliverer(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult setDeliveryPolicy(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult setProfitPolicy(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult associateCard(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult showCourierDeliveries(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult showRestaurantTop(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult showCustomers(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult showMenuItem(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult showTotalProfit(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult showTotalProfit(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult runTest(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+	public CommandResult help(String[] args){
+		if(args.length != 5)
+			return invalidInput();
+	}
+}

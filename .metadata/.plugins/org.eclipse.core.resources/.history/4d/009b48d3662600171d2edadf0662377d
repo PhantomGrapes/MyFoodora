@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package ui;
+
+import myFoodora.MyFoodora;
+
+/**
+ * @author Dingo
+ *
+ */
+public class CLUI {
+	MyFoodora myFoodora;
+	UICore uiCore;
+	CLInvoker invoker;
+	public void run(){
+		
+	}
+}

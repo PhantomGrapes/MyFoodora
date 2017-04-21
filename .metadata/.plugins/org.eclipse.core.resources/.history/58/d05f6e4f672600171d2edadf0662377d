@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package ui;
+
+import java.util.Scanner;
+
+import command.CommandResult;
+import myFoodora.MyFoodora;
+
+/**
+ * @author Dingo
+ *
+ */
+public class CLUI {
+	MyFoodora myFoodora;
+	UICore uiCore;
+	CLInvoker invoker;
+	
+	public CommandResult runCommand(String command){
+		
+		
+	}
+	public void runCLUI(){
+		Scanner scanner = new Scanner(System.in);
+		String command = null;
+		CommandResult res = null;
+		while (!(command = scanner.nextLine()).equalsIgnoreCase("quit")){
+            try {
+				res = runCommand(command);
+				System.out.println(res.getMessage());
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+        }
+	}
+}

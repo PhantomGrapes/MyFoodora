@@ -30,9 +30,14 @@ public class Coordinate {
 		return distance;
 	}
 	
-	public static Coordinate stringToCoordinate(String s){
-		if(!s.startsWith("(") || !s.endsWith(""))
-			return null;
+	// transform string like (1,2) to coordinate
+	public static Coordinate stringToCoordinate(String s)throws Exception{
+		if(!s.startsWith("(") || !s.endsWith(")"))
+			throw new Exception("Coordinate parse error.");
+		s = s.substring(1, s.length()-1);
+		String[] cs = s.split(",");
+		Coordinate c = new Coordinate(Integer.parseInt(cs[0]), Integer.parseInt(cs[1]));
+		return c;
 	}
 }
 

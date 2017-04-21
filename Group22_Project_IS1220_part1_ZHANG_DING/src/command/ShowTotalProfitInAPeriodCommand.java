@@ -16,6 +16,23 @@ import user.Manager;
 public class ShowTotalProfitInAPeriodCommand implements Command {
 	Date startDate;
 	Date endDate;
+	
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
 	@Override
 	public CommandResult execute() throws Exception{
 		if (!(UICore.getCurrentUser() instanceof Manager))

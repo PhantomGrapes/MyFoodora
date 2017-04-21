@@ -15,6 +15,14 @@ public class OnDutyCommand implements Command {
 
 	String username;
 	
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	
 	@Override
 	public CommandResult execute() throws Exception{
@@ -24,6 +32,7 @@ public class OnDutyCommand implements Command {
 		currentUser.setOnOrOffDuty(true);
 		return success("Successfully set on duty");
 	}
+
 
 	@Override
 	public CommandResult success(String message) {
