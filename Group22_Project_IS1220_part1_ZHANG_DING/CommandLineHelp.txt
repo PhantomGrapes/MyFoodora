@@ -1,0 +1,64 @@
+- login <username> <password> : to allow a user to perform the login
+- logout <> : to allow the currently logged on user to log out
+registerRestaurant <name> <address> <username> <password> : for the currently 
+logged on manager to add a restaurant of given name, address (i.e. address 
+should be a bi-dimensional co-ordinate), username and password to the system.
+- registerCustomer <firstName> <lastName> <username> <address> <password> : for 
+the currently logged on manager to add a client to the system
+- registerCourier <firstName> <lastName> <username> <position> <password> : for 
+the currently logged on manager to add a courier to the system (by default each 
+newly registered courier is on-duty).
+- addDishRestauarantMenu <dishName> <dishCategory> <foodCategory> <unitPrice> : 
+for the currently logged on restaurant to add a dish with given name, given 
+category (starter,main,dessert), food type (standard,vegetarian, gluten-free) and 
+price to the menu of a restaurant with given name (this command can be executed 
+by a restaurant-user only)
+- createMeal <mealName> : for the currently logged on restaurant to create a meal
+with a given name
+- addDish2Meal <dishName> <mealName> : for the currently logged on restaurant to
+add a dish to a meal
+- showMeal <mealName> : for the currently logged on restaurant to show the dishes
+in a meal with given name
+- saveMeal <mealName> : for the currently logged on restaurant to save a meal with
+given name
+- setSpecialOffer <mealName> : for the currently logged on restaurant to add a
+meal in meal-of-the-week special offer
+- removeFromSpecialOffer <mealName> : for the currently logged on restaurant to
+reset a special offer
+- createOrder <restaurantName> <orderName> : for the currently logged on cus-
+tomer to create an order from a given restaurant
+- addItem2Order <orderName> <itemName> : for the currently logged on customer
+to add an item (either a menu item or a meal-deal) to an existing order
+- endOrder <orderName> < date> : for the currently logged on customer to finish
+an order at a given date and pay it
+- onDuty <username> : for the currently logged on courier to set his state as on-duty
+- offDuty <username> : for the currently logged on courier to set his state as off-duty
+- findDeliverer <orderName> : for the currently logged on restaurant to allocate an
+order to a deliverer by application of the current delivery policy (remark: this is just
+an extra facility of the CLUI, that will allow us to test whether deliverer allocation
+works properly. The actual allocation of a deliverer should be automatically triggered
+by the system on completion of an order by a customer).
+- setDeliveryPolicy <delPolicyName> : for the currently logged on myFoodora
+manager to set the delivery policy of the system to that passed as argument
+- setProfitPolicy <ProfitPolicyName> : for the currently logged on myFoodora
+manager set the profit policy of the system to that passed as argument
+- associateCard <userName> <cardType> for the currently logged on myFoodora
+manager to associate a fedelity card to a user with given name
+- showCourierDeliveries <> for the currently logged on myFoodora manager to dis-
+play the list of couriers sorted in decreasing order w.r.t. the number of completed
+deliveries
+- showRestaurantTop <> for the currently logged on myFoodora manager to display
+the list of restaurant sorted in decreasing order w.r.t. the number of delivered orders
+- showCustomers <> for the currently logged on myFoodora manager to display the
+list of customers
+- showMenuItem <restaurant-name> for the currently logged on myFoodora manager
+to display the menu of a given restaurant
+- showTotalProfit<> for the currently logged on myFoodora manager to show the
+total profit of the system since creation
+- showTotalProfit <startDate> <endDate> for the currently logged on myFoodora
+manager to show the total profit of the system within a time interval
+- runTest <testScenario-file> for a generic user of the CLUI (no need to login)
+to execute the list of CLUI commands contained in the testScenario file passed as
+argument
+- help <> for a generic user of the CLUI (no need to login) to display the list of
+available CLUI commands (a command per line) with an indication of their syntax

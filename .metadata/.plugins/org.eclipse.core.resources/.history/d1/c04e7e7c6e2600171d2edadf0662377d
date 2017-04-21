@@ -32,7 +32,6 @@ public class HelpCommand implements Command {
 			while ((line = reader.readLine()) != null) { 
 				returnValue += line;
 			}
-			reader.close();
 			return success(returnValue);
 		}
 		catch (FileNotFoundException e) {

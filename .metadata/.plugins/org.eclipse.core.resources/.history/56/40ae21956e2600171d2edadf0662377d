@@ -137,7 +137,6 @@ public class CLUI {
 				res = runCommand(command);
 				System.out.println(res.getMessage());
 			} catch (Exception e) {
-				System.out.println("Error!");
 				System.out.println(e.getMessage());
 			}
         }

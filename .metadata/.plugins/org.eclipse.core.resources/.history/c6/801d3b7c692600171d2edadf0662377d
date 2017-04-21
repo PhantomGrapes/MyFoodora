@@ -31,6 +31,7 @@ public class RunTestCommand implements Command {
 		output.createNewFile();
 		FileWriter writer = new FileWriter(output);
 		writer.flush();
+		writer.close();
 		
 		// open operation file
 		FileReader input = new FileReader(this.testScenarioFile);
@@ -42,13 +43,9 @@ public class RunTestCommand implements Command {
 		while((line = reader.readLine()) != null){
 			if (line.endsWith("\n"))
 				line = line.substring(0, line.length()-1);
-			res = clui.runCommand(line);
-			writer.write(res.getMessage()+"\n");
+			clui.runCommand(line);
 		}
-		reader.close();
-		writer.close();
-		input.close();
-		return success("Successfully run test.");
+		return null;
 	}
 
 	@Override

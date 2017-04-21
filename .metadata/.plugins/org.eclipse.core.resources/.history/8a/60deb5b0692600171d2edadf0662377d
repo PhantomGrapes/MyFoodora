@@ -48,7 +48,7 @@ public class RunTestCommand implements Command {
 		reader.close();
 		writer.close();
 		input.close();
-		return success("Successfully run test.");
+		return null;
 	}
 
 	@Override

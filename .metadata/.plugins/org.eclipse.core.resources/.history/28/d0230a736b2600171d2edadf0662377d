@@ -37,76 +37,76 @@ public class CLUI {
 			res = invoker.login(parameters);
 			break;
 		case "logout":
-			res = invoker.logout(parameters);
+			
 			break;
 		case "registerRestaurant":
-			res = invoker.registerRestaurant(parameters);
+			
 			break;
 		case "registerCustomer":
-			res = invoker.registerCustomer(parameters);
+			
 			break;
 		case "registerCourier":
-			res = invoker.registerCourier(parameters);
+			
 			break;
 		case "addDishRestauarantMenu":
-			res = invoker.addDishRestauarantMenu(parameters);
+			
 			break;
 		case "createMeal":
-			res = invoker.createMeal(parameters);
+			
 			break;
 		case "addDish2Meal":
-			res = invoker.addDish2Meal(parameters);
+			
 			break;
 		case "showMeal":
-			res = invoker.showMeal(parameters);
+			
 			break;
 		case "saveMeal":
-			res = invoker.saveMeal(parameters);
+			
 			break;
 		case "setSpecialOffer":
-			res = invoker.setSpecialOffer(parameters);
+			
 			break;
 		case "removeFromSpecialOffer":
-			res = invoker.removeFromSpecialOffer(parameters);
+			
 			break;
 		case "createOrder":
-			res = invoker.createOrder(parameters);
+			
 			break;
 		case "addItem2Order":
-			res = invoker.addItem2Order(parameters);
+			
 			break;
 		case "endOrder":
-			res = invoker.endOrder(parameters);
+			
 			break;
 		case "onDuty":
-			res = invoker.onDuty(parameters);
+			
 			break;
 		case "offDuty":
-			res = invoker.offDuty(parameters);
+			
 			break;
 		case "findDeliverer":
-			res = invoker.findDeliverer(parameters);
+			
 			break;
 		case "setDeliveryPolicy":
-			res = invoker.setDeliveryPolicy(parameters);
+			
 			break;
 		case "setProfitPolicy":
-			res = invoker.setProfitPolicy(parameters);
+			
 			break;
 		case "associateCard":
-			res = invoker.associateCard(parameters);
+			
 			break;
 		case "showCourierDeliveries":
-			res = invoker.showCourierDeliveries(parameters);
+			
 			break;
 		case "showRestaurantTop":
-			res = invoker.showRestaurantTop(parameters);
+			
 			break;
 		case "showCustomers":
-			res = invoker.showCustomers(parameters);
+			
 			break;
 		case "showMenuItem":
-			res = invoker.showMenuItem(parameters);
+			
 			break;
 		case "showTotalProfit":
 			if(parameters.length == 0)
@@ -115,10 +115,10 @@ public class CLUI {
 				res = invoker.showTotalProfitInAPeriod(parameters);
 			break;
 		case "runTest":
-			res = invoker.runTest(parameters);
+			
 			break;
 		case "help":
-			res = invoker.help(parameters);
+			
 			break;
 
 		default:
@@ -137,7 +137,6 @@ public class CLUI {
 				res = runCommand(command);
 				System.out.println(res.getMessage());
 			} catch (Exception e) {
-				System.out.println("Error!");
 				System.out.println(e.getMessage());
 			}
         }

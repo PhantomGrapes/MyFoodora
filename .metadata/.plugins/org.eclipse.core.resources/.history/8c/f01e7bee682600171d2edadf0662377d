@@ -5,8 +5,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-import ui.CLUI;
-
 /**
  * @author Dingo
  * for a generic user of the CLUI (no need to login) to execute the list of CLUI commands 
@@ -14,7 +12,7 @@ import ui.CLUI;
  */
 public class RunTestCommand implements Command {
 	String testScenarioFile;
-	CLUI clui;
+	
 	
 	public String getTestScenarioFile() {
 		return testScenarioFile;
@@ -31,6 +29,7 @@ public class RunTestCommand implements Command {
 		output.createNewFile();
 		FileWriter writer = new FileWriter(output);
 		writer.flush();
+		writer.close();
 		
 		// open operation file
 		FileReader input = new FileReader(this.testScenarioFile);
@@ -38,17 +37,10 @@ public class RunTestCommand implements Command {
 
 		// read operation and write to output file
 		String line = null;
-		CommandResult res = null;
 		while((line = reader.readLine()) != null){
-			if (line.endsWith("\n"))
-				line = line.substring(0, line.length()-1);
-			res = clui.runCommand(line);
-			writer.write(res.getMessage()+"\n");
+			
 		}
-		reader.close();
-		writer.close();
-		input.close();
-		return success("Successfully run test.");
+		return null;
 	}
 
 	@Override

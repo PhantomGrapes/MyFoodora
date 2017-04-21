@@ -23,16 +23,15 @@ public class HelpCommand implements Command {
 
 	@Override
 	public CommandResult execute() throws Exception{
-		String returnValue = "", line = "";
+		String returnValue = "";
 		FileReader file = null;
 		BufferedReader reader = null;
 		try {
 			file = new FileReader(helpFile);
 			reader = new BufferedReader(file);
-			while ((line = reader.readLine()) != null) { 
-				returnValue += line;
-			}
-			reader.close();
+			byte[] data = new byte[(int) file.length()];
+			fis.read(data);
+			String str = new String(data, "UTF-8");
 			return success(returnValue);
 		}
 		catch (FileNotFoundException e) {
