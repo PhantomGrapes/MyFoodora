@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package command;
+
+import item.FidelityPlan;
+import item.FidelityPlanFactory;
+import myFoodora.MyFoodora;
+import ui.UICore;
+import user.Customer;
+import user.Manager;
+
+/**
+ * @author Dingo
+ *
+ */
+public class AssociateCardCommand implements Command {
+	String userName;
+	String cardType;
+	MyFoodora myFoodora;
+	@Override
+	public CommandResult execute() throws Exception{
+		if (!(UICore.getCurrentUser() instanceof Manager))
+			return fail("You haven't right to use this command.");
+		Customer c = null;
+		for (Customer customer : myFoodora.getCustomers()) {
+			if(customer.getUsername() == userName)
+				c = customer;
+		}
+		if(c==null)
+			return fail("No user found.");
+		FidelityPlanFactory factory = new FidelityPlanFactory();
+		FidelityPlan card = factory.getPlan(cardType);
+		if(card == null)
+			return fail("Card type doesn't exist.");
+		c.registerFidelityPlan(card);
+		return success("Successfully associated card with customer.");
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
+	}
+
+}

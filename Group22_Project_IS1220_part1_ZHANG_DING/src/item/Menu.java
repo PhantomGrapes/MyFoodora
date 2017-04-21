@@ -109,4 +109,31 @@ public class Menu {
 			halfMeals.remove(meal);
 		}
 	}
+
+	@Override
+	public String toString() {
+		String result = "Menu\n";
+		result += "Full Meal:\n";
+		for (Meal meal : fullMeals) {
+			result += meal+"\n";
+		}
+		result += "Half Meal:\n";
+		for (Meal meal : halfMeals) {
+			result += meal+"\n";
+		}
+		result += "Item:\n";
+		for (Item item : items) {
+			result += item + "\n";
+		}
+		result += "Special meal name:\n";
+		for (Meal meal : fullMeals) {
+			if(meal.isSpecialOffer())
+				result += meal.getName()+"\n";
+		}
+		for (Meal meal : halfMeals) {
+			if(meal.isSpecialOffer())
+				result += meal.getName()+"\n";
+		}
+		return result;
+	}
 }

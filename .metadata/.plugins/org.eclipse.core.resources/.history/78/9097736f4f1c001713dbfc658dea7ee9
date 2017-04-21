@@ -1,8 +1,0 @@
-package exception;
-
-public class NumberOutOfRangeException extends Exception {
-	@override
-	public String getMessage(){
-		return "Number is out of range";
-	}
-}

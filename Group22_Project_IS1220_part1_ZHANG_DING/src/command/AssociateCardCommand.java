@@ -3,28 +3,81 @@
  */
 package command;
 
+import item.FidelityPlan;
+import item.FidelityPlanFactory;
+import myFoodora.MyFoodora;
+import ui.UICore;
+import user.Customer;
+import user.Manager;
+
 /**
  * @author Dingo
- *
+ *for the currently logged on myFoodora manager to associate a fidelity card 
+ *to a user with given name
  */
 public class AssociateCardCommand implements Command {
-
-	/* (non-Javadoc)
-	 * @see command.Command#execute()
-	 */
-	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-
+	String userName;
+	String cardType;
+	MyFoodora myFoodora;
+	
+	
+	public String getUserName() {
+		return userName;
 	}
 
-	/* (non-Javadoc)
-	 * @see command.Command#refuse()
-	 */
-	@Override
-	public void refuse() {
-		// TODO Auto-generated method stub
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
+	public String getCardType() {
+		return cardType;
+	}
+
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
+	}
+
+	public MyFoodora getMyFoodora() {
+		return myFoodora;
+	}
+
+	public void setMyFoodora(MyFoodora myFoodora) {
+		this.myFoodora = myFoodora;
+	}
+
+	@Override
+	public CommandResult execute() throws Exception{
+		if (!(UICore.getCurrentUser() instanceof Manager))
+			return fail("You haven't right to use this command.");
+		Customer c = null;
+		for (Customer customer : myFoodora.getCustomers()) {
+			if(customer.getUsername() == userName)
+				c = customer;
+		}
+		if(c==null)
+			return fail("No user found.");
+		FidelityPlanFactory factory = new FidelityPlanFactory();
+		FidelityPlan card = factory.getPlan(cardType);
+		if(card == null)
+			return fail("Card type doesn't exist.");
+		c.registerFidelityPlan(card);
+		return success("Successfully associated card with customer.");
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
 	}
 
 }

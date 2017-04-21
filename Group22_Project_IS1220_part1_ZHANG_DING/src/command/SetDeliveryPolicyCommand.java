@@ -3,6 +3,8 @@
  */
 package command;
 
+import policy.DeliveryPolicy;
+import policy.DeliveryPolicyFactory;
 import policy.FairOccupationDeliveryPolicy;
 import policy.FastestDeliveryPolicy;
 import ui.UICore;
@@ -30,16 +32,12 @@ public class SetDeliveryPolicyCommand implements Command {
 		if (!(UICore.getCurrentUser() instanceof Manager))
 			return fail("You haven't right to use this command.");
 		Manager currentUser = (Manager) UICore.getCurrentUser();
-		if(delPolicyName == "fastest delivery"){
-			currentUser.setDeliveryPolicy(new FastestDeliveryPolicy());
-			return success("Successfully set delivery policy");
-		}
-		
-		if(delPolicyName == "fair-occupation delivery"){
-			currentUser.setDeliveryPolicy(new FairOccupationDeliveryPolicy());
-			return success("Successfully set delivery policy");
-		}
-		return fail("Not such delivery policy");
+		DeliveryPolicyFactory factory = new DeliveryPolicyFactory();
+		DeliveryPolicy policy = factory.getPolicy(delPolicyName);
+		if(policy == null)
+			return fail("Not such delivery policy");
+		currentUser.setDeliveryPolicy(policy);
+		return success("Successfully set delivery policy");
 	}
 
 	@Override

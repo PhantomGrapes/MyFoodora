@@ -1,7 +1,6 @@
 package user;
 
 import java.util.Date;
-import java.security.Policy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -9,6 +8,7 @@ import java.util.Comparator;
 import item.Order;
 import myFoodora.MyFoodora;
 import policy.DeliveryPolicy;
+import policy.TargetProfitPolicy;
 
 /**
  * @author Shoulong
@@ -39,6 +39,18 @@ public class Manager extends User{
 			// if the date of order is between start date and end date, the income will be included
 			if(startDate.compareTo(order.getDate()) <= 0 &&  order.getDate().compareTo(endDate) <= 0)
 				totalIncome += order.getFinalPrice()*markup+serviceFee-deliveryCost;
+		}
+		return totalIncome;
+	}
+	
+	public double getTotalIncome(){
+		double totalIncome, markup, serviceFee, deliveryCost;
+		totalIncome = 0;
+		markup = myFoodora.getMarkup();
+		serviceFee = myFoodora.getServiceFee();
+		deliveryCost = myFoodora.getDeliveryCost();
+		for (Order order : myFoodora.getOrders()) {
+			totalIncome += order.getFinalPrice()*markup+serviceFee-deliveryCost;
 		}
 		return totalIncome;
 	}
@@ -119,5 +131,40 @@ public class Manager extends User{
 	
 	public void setDeliveryPolicy(DeliveryPolicy policy){
 		myFoodora.setDeliveryPolicy(policy);
+	}
+	
+	public void setProfitPolicy(TargetProfitPolicy policy){
+		myFoodora.setTargetProfitPolicy(policy);
+	}
+	
+	public ArrayList<Courier> getSortedCouriers(){
+		ArrayList<Courier> c = myFoodora.getCouriers();
+		Collections.sort(c, new Comparator<Courier>() {
+			@Override
+			public int compare(Courier c1, Courier c2){
+				return c2.counterOfDeliveredOrder() - c1.counterOfDeliveredOrder();
+			}
+		});
+		return c;
+	}
+	
+	public ArrayList<Restaurant> getSortedRestaurants(){
+		ArrayList<Restaurant> rs = new ArrayList<Restaurant>();
+		rs = myFoodora.getRestaurants();
+		Collections.sort(rs, new Comparator<Restaurant>() {
+			@Override
+			public int compare(Restaurant r1, Restaurant r2){
+				return r2.getOrders().size() - r1.getOrders().size();
+			}
+		});
+		return rs;
+	}
+	
+	public ArrayList<Customer> getCustomers(){
+		return myFoodora.getCustomers();
+	}
+	
+	public ArrayList<Restaurant> getRestaurants(){
+		return myFoodora.getRestaurants();
 	}
 }

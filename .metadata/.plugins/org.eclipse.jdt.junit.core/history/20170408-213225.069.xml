@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="CourierTest" project="Group22_Project_IS1220_part1_ZHANG_DING" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="user.CourierTest" time="0.015">
-    <testcase name="testAcceptTheOrder" classname="user.CourierTest" time="0.015"/>
-    <testcase name="testCounterOfDeliveredOrder" classname="user.CourierTest" time="0.0"/>
-  </testsuite>
-</testrun>

@@ -29,5 +29,10 @@ public class Coordinate {
 		distance = Math.sqrt((c1.getX()-c2.getX())*(c1.getX()-c2.getX()) + (c1.getY()-c2.getY())*(c1.getY()-c2.getY()));
 		return distance;
 	}
+	
+	public static Coordinate stringToCoordinate(String s){
+		if(!s.startsWith("(") || !s.endsWith(""))
+			return null;
+	}
 }
 

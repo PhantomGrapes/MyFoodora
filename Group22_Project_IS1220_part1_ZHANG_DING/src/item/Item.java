@@ -132,4 +132,9 @@ public class Item implements Offer{
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return name + " " + preference + " Price:" + price;
+	}
+
 }

@@ -1,7 +1,0 @@
-package item;
-
-public abstract class Offer {
-
-	public double accept(FidelityPlan fidelityPlan);
-	
-}

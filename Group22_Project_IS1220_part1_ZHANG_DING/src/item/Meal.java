@@ -214,5 +214,10 @@ public class Meal implements Offer {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return name+" "+preference+" Price:"+price+"\n"+mealComposer;
+	}
 	
 }

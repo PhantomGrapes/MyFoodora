@@ -1,0 +1,53 @@
+/**
+ * 
+ */
+package ui;
+
+import java.util.ArrayList;
+
+import item.Meal;
+import item.Order;
+import user.User;
+
+/**
+ * @author Dingo
+ *
+ */
+public class UICore {
+	static User currentUser;
+	static ArrayList<Meal> currentMeals;
+	static ArrayList<Order> currentOrders;
+
+	public UICore() {
+		currentMeals = new ArrayList<Meal>();
+		currentUser = null;
+	}
+
+	public static ArrayList<Order> getCurrentOrders() {
+		return currentOrders;
+	}
+
+	public static void setCurrentOrders(ArrayList<Order> currentOrders) {
+		UICore.currentOrders = currentOrders;
+	}
+	
+	public static ArrayList<Meal> getCurrentMeals() {
+		return currentMeals;
+	}
+
+	public static void setCurrentMeals(ArrayList<Meal> currentMeals) {
+		UICore.currentMeals = currentMeals;
+	}
+
+	public static  User getCurrentUser() {
+		return currentUser;
+	}
+
+	public static void setCurrentUser(User currentUser) {
+		UICore.currentUser = currentUser;
+	}
+	
+	public static void clear(){
+		
+	}
+}

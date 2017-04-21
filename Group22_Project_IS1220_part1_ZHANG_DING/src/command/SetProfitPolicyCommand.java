@@ -5,6 +5,11 @@ package command;
 
 import policy.FairOccupationDeliveryPolicy;
 import policy.FastestDeliveryPolicy;
+import policy.TargetProfitDeliveryCost;
+import policy.TargetProfitMarkup;
+import policy.TargetProfitPolicy;
+import policy.TargetProfitPolicyFactory;
+import policy.TargetProfitServiceFee;
 import ui.UICore;
 import user.Manager;
 
@@ -16,21 +21,27 @@ import user.Manager;
 public class SetProfitPolicyCommand implements Command {
 
 	String profitPolicyName;
+	
+	
+	public String getProfitPolicyName() {
+		return profitPolicyName;
+	}
+
+	public void setProfitPolicyName(String profitPolicyName) {
+		this.profitPolicyName = profitPolicyName;
+	}
+
 	@Override
 	public CommandResult execute() throws Exception{
 		if (!(UICore.getCurrentUser() instanceof Manager))
 			return fail("You haven't right to use this command.");
 		Manager currentUser = (Manager) UICore.getCurrentUser();
-		if(profitPolicyName == "fastest delivery"){
-			currentUser.setDeliveryPolicy(new FastestDeliveryPolicy());
-			return success("Successfully set delivery policy");
-		}
-		
-		if(profitPolicyName == "fair-occupation delivery"){
-			currentUser.setDeliveryPolicy(new FairOccupationDeliveryPolicy());
-			return success("Successfully set delivery policy");
-		}
-		return fail("Not such delivery policy");
+		TargetProfitPolicyFactory factory = new TargetProfitPolicyFactory();
+		TargetProfitPolicy policy = factory.getPolicy(profitPolicyName);
+		if(policy == null)
+			return fail("Not such target profit policy");
+		currentUser.setProfitPolicy(policy);
+		return success("Successfully set target profit policy");
 	}
 
 	@Override

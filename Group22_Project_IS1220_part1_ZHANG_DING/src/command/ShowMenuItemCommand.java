@@ -2,29 +2,55 @@
  * 
  */
 package command;
+import ui.UICore;
+import user.Manager;
+import user.Restaurant;
 
 /**
  * @author Dingo
- *
+ * for the currently logged on myFoodora manager to display the menu of a 
+ * given restaurant
  */
 public class ShowMenuItemCommand implements Command {
-
-	/* (non-Javadoc)
-	 * @see command.Command#execute()
-	 */
-	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-
+	String restaurantName;
+	
+	public String getRestaurantName() {
+		return restaurantName;
 	}
 
-	/* (non-Javadoc)
-	 * @see command.Command#refuse()
-	 */
-	@Override
-	public void refuse() {
-		// TODO Auto-generated method stub
+	public void setRestaurantName(String restaurantName) {
+		this.restaurantName = restaurantName;
+	}
 
+	@Override
+	public CommandResult execute() throws Exception{
+		if (!(UICore.getCurrentUser() instanceof Manager))
+			return fail("You haven't right to use this command.");
+		Manager currentUser = (Manager) UICore.getCurrentUser();
+		Restaurant res = null;
+		for (Restaurant r : currentUser.getRestaurants()) {
+			if(res.getName()==r.getName())
+				res = r;
+		}
+		if(res==null)
+			return fail("Can't find this restaurant.");
+		return success(res.getMenu().toString());
+	}
+
+	@Override
+	public CommandResult success(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(true);
+		return result;
+	}
+
+	@Override
+	public CommandResult fail(String message) {
+		CommandResult result = new CommandResult();
+		result.setMessage(message);
+		result.setResult(false);
+		return result;
 	}
 
 }

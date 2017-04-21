@@ -20,6 +20,7 @@ public class UICore {
 
 	public UICore() {
 		currentMeals = new ArrayList<Meal>();
+		currentOrders = new ArrayList<Order>();
 		currentUser = null;
 	}
 
@@ -48,6 +49,8 @@ public class UICore {
 	}
 	
 	public static void clear(){
-		
+		currentMeals = new ArrayList<Meal>();
+		currentOrders = new ArrayList<Order>();
+		currentUser = null;
 	}
 }

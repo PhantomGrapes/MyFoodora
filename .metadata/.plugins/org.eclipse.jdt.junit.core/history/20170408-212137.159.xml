@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="ItemTest" project="Group22_Project_IS1220_part1_ZHANG_DING" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="test.ItemTest" time="0.0">
-    <testcase name="testSetNegativePrice" classname="test.ItemTest" time="0.0"/>
-    <testcase name="testSetPreference" classname="test.ItemTest" time="0.0"/>
-    <testcase name="testSetType" classname="test.ItemTest" time="0.0"/>
-    <testcase name="testSetBigPrice" classname="test.ItemTest" time="0.0"/>
-  </testsuite>
-</testrun>
